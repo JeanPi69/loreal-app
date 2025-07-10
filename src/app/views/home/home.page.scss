@@ -1,7 +1,3 @@
-ion-input {
-  margin-top: 16px;
-}
-
 .logo-img {
   display: flex;
   justify-content: flex-end;
@@ -19,25 +15,13 @@ ion-input {
   margin-top: 16px;
 }
 
-.form-container {
-  display:flex;
-  flex-direction: column;
-  margin-top: 16px;
-  width: 300px;
-}
-
 .btn-container {
   display: flex;
   flex-direction: column;
   margin-top: 16px;
   width: 300px;
-  gap: 8px;
-  justify-content: center;
-  align-items: center;
 }
-
 .login-btn {
-  width: 100%;
   color: white;
   font-weight: 600;
   --background: #48c4ff;
@@ -46,9 +30,27 @@ ion-input {
   --padding-start: 0;
   --padding-end: 0;
 }
+.sponsor-container {
+  width: 100%;
+  padding: 30px 20px;
+  & p {
+    font-weight: 600;
+    color: black;
+  }
+  & .sponsor-row:nth-child(3) {
+    margin-top: 12px;
+  }
+}
 
-.label-forget-password{
-    color:blue; 
-    text-decoration: underline;
-    margin-top: 16px;
+.sponsor-row {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 12px;
+}
+
+.sponsor-row img {
+  width: 60px;
+  height: auto;
+  object-fit: contain;
 }

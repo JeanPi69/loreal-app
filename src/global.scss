@@ -36,7 +36,18 @@
 /* @import "@ionic/angular/css/palettes/dark.class.css"; */
 @import "@ionic/angular/css/palettes/dark.system.css";
 
-* {
-  // Activar para ver lineas de contorno de los elementos
-  /* outline: 1px solid rgba(0, 0, 0, 0.2); */
+// Activar para ver lineas de contorno de los elementos
+/* * {
+  outline: 1px solid rgba(0, 0, 0, 0.2);
+} */
+
+ion-content{
+  --background: url("./assets/login/img/background_complete.png") 0 0/100% 100% no-repeat;
+}
+
+ion-input {
+  --color: black !important;
+  color: black !important;
+  --placeholder-color: black !important;
+  --border: 1px solid black !important;
 }

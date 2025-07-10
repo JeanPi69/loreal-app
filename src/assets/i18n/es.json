@@ -1,0 +1,122 @@
+{
+    "AUTH": {
+        "HOME": {
+            "LOGIN": "INICIAR SESIÓN",
+            "REGISTER": "REGISTRO"
+        },
+        "REGISTER": {
+            "NAMES": "NOMBRES",
+            "LAST_NAMES": "APELLIDOS",
+            "EMAIL": "CORREO",
+            "CODE": "CÓDIGO",
+            "PHONE": "CELULAR",
+            "CHOOSE_COUNTRY": "SELECCIONE PAÍS",
+            "CITY": "CIUDAD",
+            "DOCUMENT_TYPE": "TIPO DOCUMENTO",
+            "DOCUMENT_TYPE_PASSPORT": "PASAPORTE",
+            "DOCUMENT_NUMBER": "DOCUMENTO DE IDENTIDAD",
+            "FOOD_PREFERENCE": "PREFERENCIA DE ALIMENTACIÓN",
+            "PREFERENCES_VEGETARIAN": "VEGETARIANO",
+            "PREFERENCES_PESCETARIAN": "PESCETARIANO",
+            "PREFERENCES_VEGAN": "VEGANO",
+            "PREFERENCES_NO_PREFERENCES": "SIN PREFERENCIAS",
+            "PREFERENCES_OTHERS": "OTROS",
+            "PASSWORD": "CONTRASEÑA",
+            "POLICY_FIRST": "ACEPTO LA",
+            "POLICY_END": "POLÍTICA DE PRIVACIDAD DE DATOS",
+            "NOTIFICATION": "DESEO RECIBIR NOTIFICACIONES E INFORMACIÓN SOBRE EL EVENTO",
+            "REGISTER_BUTTON": "REGISTRO",
+            "BACK_BUTTON": "VOLVER"
+        },
+        "LOGIN": {
+            "SPONSOR": "Auspicio Científico de:",
+            "EMAIL": "CORREO",
+            "PASSWORD": "CONTRASEÑA",
+            "LOGIN": "INICIAR SESIÓN",
+            "BACK": "VOLVER",
+            "FORGOT_PASSWORD": "¿OLVIDÓ SU CONTRASEÑA?"
+        },
+        "RECOVER_PASSWORD": {
+            "RECOVER": "RECUPERAR"
+        }
+    },
+    "POLICY": {
+        "TITLE": "POLÍTICA DE PRIVACIDAD DE DATOS",
+        "POLICY_FOR": "POLÍTICA PARA"
+    },
+    "HOME": {
+        "DIARY": "AGENDA",
+        "EXHIBITORS": "EXPOSITORES",
+        "TRIP": "VIAJE",
+        "TOUR": "TOUR/CENA",
+        "RECOMMENDATIONS": "RECOMENDACIONES",
+        "AGENCIES": "AGENCIAS DE VIAJES",
+        "PERU": "PERÚ",
+        "MAP": "MAPA",
+        "CONNECTIVITY": "CONECTIVIDAD",
+        "MENU": {
+            "LOGOUT": "CERRAR SESIÓN",
+            "CHANGE_PASSWORD": "CAMBIAR CONTRASEÑA"
+        },
+        "MEDIA": "FOTOS / VIDEOS",
+        "SCIENTIFIC": "ESTUDIOS CIENTÍFICOS"
+    },
+    "SPEAKERS": {
+        "TITLE": "EXPOSITORES"
+    },
+    "AGENDA": {
+        "TITLE": "AGENDA",
+        "FRIDAY": "VIERNES",
+        "SUNDAY": "SÁBADO",
+        "MONTH": "SEPTIEMBRE",
+        "DOMINGO": "DOMINGO",
+        "LUNES": "LUNES",
+        "MARTES": "MARTES",
+        "MIERCOLES": "MIÉRCOLES",
+        "JUEVES": "JUEVES",
+        "VIERNES": "VIERNES",
+        "SABADO": "SÁBADO"
+    },
+    "CHANGE_PASSWORD": {
+        "LAST_PASSWORD": "CONTRASEÑA ANTERIOR",
+        "NEW_PASSWORD": "NUEVA CONTRASEÑA",
+        "CONFIRM_PASSWORD": "CONFIRMAR NUEVA CONTRASEÑA",
+        "SEND_BUTTON": "ENVIAR"
+    },
+    "TRIPS": {
+        "AIRLINE": "AEROLÍNEA",
+        "DEPARTURE_TIME": "FECHA DE SALIDA",
+        "ARRIVAL_TIME": "FECHA DE LLEGADA",
+        "FLYING_NUMBER": "NÚMERO DE VUELO",
+        "DRIVER": "CHOFER"
+    },
+    "CONNECTIVITY": {
+        "NETWORK": "RED",
+        "PASSWORD": "CONTRASEÑA"
+    },
+    "SOCIAL": {
+        "SOCIAL": "SOCIALES",
+        "FRIDAY": "VIERNES 22 DE SEPTIEMBRE",
+        "FRIDAY_TEXT": "<p>Realizaremos un TOUR al Museo de arte de Lima (MALI). Los autobuses que nos llevarán estarán esperándolo en la puerta de ingreso del Hotel al concluir la agenda del día.</p>",
+        "SATURDAY": "SÁBADO 23 DE SEPTIEMBRE",
+        "SATURDAY_TEXT": "<p>Tendremos un espectacular cierre para nuestro <b>I SUMMIT SKINCARE & HEALTH.</b> <br><br> Esperamos que nos acompañe hasta la culminación, pues una gran sorpresa internacional estará esperando por usted.</p>"
+    },
+    "MEDIA": {
+        "PHOTOS": "FOTOS",
+        "VIDEOS": "VIDEOS",
+        "UPLOAD_PHOTO": "SUBIR FOTO",
+        "UPLOAD_VIDEO": "SUBIR VIDEO"
+    },
+    "SURVEY": {
+        "FIRST_QUESTION": "1.- ¿CÓMO CALIFICARÍAS EL CONGRESO?",
+        "FIRST_QUESTION_ANSWER1": "EXCELENTE",
+        "FIRST_QUESTION_ANSWER2": "BUENO",
+        "FIRST_QUESTION_ANSWER3": "MALO",
+        "SECOND_QUESTION": "2.- ¿RECOMENDARÍAS EL EVENTO A OTRO DOCTOR?",
+        "SECOND_QUESTION_ANSWER1": "SI",
+        "SECOND_QUESTION_ANSWER2": "NO",
+        "THIRD_QUESTION": "3.- ¿QUÉ TEMA TE GUSTARÍA QUE ABORDEMOS A FUTURO?",
+        "NEXT_BUTTON": "SIGUIENTE",
+        "SEND_BUTTON": "ENVIAR"
+    }
+}

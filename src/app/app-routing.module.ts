@@ -7,10 +7,14 @@ const routes: Routes = [
     loadChildren: () => import('./views/login/login.module').then( m => m.LoginPageModule)
   },
   {
-    path: '',
-    redirectTo: 'login',
-    pathMatch: 'full'
+    path: 'home',
+    loadChildren: () => import('./views/home/home.module').then( m => m.HomePageModule)
   },
+  {
+    path: '',
+    redirectTo: 'home',
+    pathMatch: 'full'
+  }
 ];
 
 @NgModule({

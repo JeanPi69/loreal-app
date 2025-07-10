@@ -1,0 +1,121 @@
+{
+    "AUTH": {
+        "HOME": {
+            "LOGIN": "LOG IN",
+            "REGISTER": "SIGN IN"
+        },
+        "REGISTER": {
+            "NAMES": "NAMES",
+            "LAST_NAMES": "LAST NAMES",
+            "EMAIL": "EMAIL",
+            "CODE": "CODE",
+            "PHONE": "PHONE",
+            "CHOOSE_COUNTRY": "CHOOSE COUNTRY",
+            "CITY": "CITY",
+            "DOCUMENT_TYPE": "DOCUMENT TYPE",
+            "DOCUMENT_TYPE_PASSPORT": "PASSPORT",
+            "DOCUMENT_NUMBER": "DOCUMENT NUMBER",
+            "FOOD_PREFERENCE": "FOOD PREFERENCE",
+            "PREFERENCES_VEGETARIAN": "VEGETARIAN",
+            "PREFERENCES_PESCETARIAN": "PESCETARIAN",
+            "PREFERENCES_VEGAN": "VEGAN",
+            "PREFERENCES_NO_PREFERENCES": "NO PREFERENCES",
+            "PREFERENCES_OTHERS": "OTHERS",
+            "PASSWORD": "PASSWORD",
+            "POLICY_FIRST": "I ACCEPT",
+            "POLICY_END": "THE DATA PRIVACY POLICY",
+            "NOTIFICATION": "I WISH TO RECEIVE NOTIFICATIONS AND INFORMATION ABOUT THE EVENT",
+            "REGISTER_BUTTON": "REGISTER",
+            "BACK_BUTTON": "BACK"
+        },
+        "LOGIN": {
+            "SPONSOR": "Scientific Sponsorship by:",
+            "EMAIL": "EMAIL",
+            "PASSWORD": "PASSWORD",
+            "LOGIN": "LOG IN",
+            "BACK": "BACK",
+            "FORGOT_PASSWORD": "¿FORGOT YOUR PASSWORD?"
+        },
+        "RECOVER_PASSWORD": {
+            "RECOVER": "RECOVER"
+        }
+    },
+    "POLICY": {
+        "TITLE": "DATA PRIVACY POLICY",
+        "POLICY_FOR": "POLICY FOR"
+    },
+    "HOME": {
+        "DIARY": "AGENDA",
+        "EXHIBITORS": "SPEAKERS",
+        "TRIP": "TRIP",
+        "TOUR": "TOUR/DINNER",
+        "RECOMMENDATIONS": "RECOMMENDATIONS",
+        "AGENCIES": "TRAVEL AGENCIES",
+        "PERU": "PERU",
+        "MAP": "MAP",
+        "CONNECTIVITY": "CONNECTIVITY",
+        "MENU": {
+            "LOGOUT": "LOGOUT",
+            "CHANGE_PASSWORD": "CHANGE PASSWORD"
+        },
+        "MEDIA": "PHOTOS / VIDEOS",
+        "SCIENTIFIC": "SCIENTIFIC STUDIES"
+    },
+    "SPEAKERS": {
+        "TITLE": "SPEAKERS"
+    },
+    "AGENDA": {
+        "TITLE": "AGENDA",
+        "FRIDAY": "FRIDAY",
+        "SUNDAY": "SUNDAY",
+        "MONTH": "SEPTEMBER",
+        "LUNES": "MONDAY",
+        "MARTES": "TUESDAY",
+        "MIERCOLES": "WEDNESDAY",
+        "JUEVES": "THURSDAY",
+        "VIERNES": "FRIDAY",
+        "SABADO": "SATURDAY"
+    },
+    "CHANGE_PASSWORD": {
+        "LAST_PASSWORD": "LAST PASSWORD",
+        "NEW_PASSWORD": "NEW PASSWORD",
+        "CONFIRM_PASSWORD": "CONFIRM NEW PASSWORD",
+        "SEND_BUTTON": "SEND"
+    },
+    "TRIPS": {
+        "AIRLINE": "AIRLINE",
+        "DEPARTURE_TIME": "DEPARTURE TIME",
+        "ARRIVAL_TIME": "ARRIVAL TIME",
+        "FLYING_NUMBER": "FLYING NUMBER",
+        "DRIVER": "DRIVER"
+    },
+    "CONNECTIVITY": {
+        "NETWORK": "NETWORK",
+        "PASSWORD": "PASSWORD"
+    },
+    "SOCIAL": {
+        "SOCIAL": "SOCIAL",
+        "FRIDAY": "FRIDAY 22ND",
+        "FRIDAY_TEXT": "<p>We will take a TOUR to the Museum of Art of Lima (MALI). The buses that will take us there will be waiting for you at the entrance door of the Hotel at the end of the day's agenda.</p>",
+        "SATURDAY": "SATURDAY 23RD",
+        "SATURDAY_TEXT": "<p>We will have a spectacular closing for our <b>I SUMMIT SKINCARE & HEALTH.</b> <br> <br> We hope you will join us until the end because a great international surprise will be waiting for you.</p>"
+    },
+    "MEDIA": {
+        "PHOTOS": "PHOTOS",
+        "VIDEOS": "VIDEOS",
+        "UPLOAD_PHOTO": "UPLOAD PHOTO",
+        "UPLOAD_VIDEO": "UPLOAD VIDEO"
+    },
+    "SURVEY": {
+        "FIRST_QUESTION": "1.- HOW WOULD YOU RATE THE CONGRESS?",
+        "FIRST_QUESTION_ANSWER1": "EXCELLENT",
+        "FIRST_QUESTION_ANSWER2": "GOOD",
+        "FIRST_QUESTION_ANSWER3": "BAD",
+        "SECOND_QUESTION": "2.- WOULD YOU RECOMMEND THE EVENT TO ANOTHER DOCTOR?",
+        "SECOND_QUESTION_ANSWER1": "YES",
+        "SECOND_QUESTION_ANSWER2": "NO",
+        "THIRD_QUESTION": "3.- WHAT TOPIC WOULD YOU LIKE US TO ADDRESS IN THE FUTURE?",
+        "NEXT_BUTTON": "NEXT",
+        "SEND_BUTTON": "SEND"
+    }
+}
