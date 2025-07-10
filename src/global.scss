@@ -35,3 +35,8 @@
 /* @import "@ionic/angular/css/palettes/dark.always.css"; */
 /* @import "@ionic/angular/css/palettes/dark.class.css"; */
 @import "@ionic/angular/css/palettes/dark.system.css";
+
+* {
+  // Activar para ver lineas de contorno de los elementos
+  /* outline: 1px solid rgba(0, 0, 0, 0.2); */
+}
