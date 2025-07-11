@@ -1,0 +1,12 @@
+<ion-content [fullscreen]="true">
+  <div class="user-header ion-padding-horizontal">
+    <ion-icon name="person" lazy="true" size="large"></ion-icon>
+    <p class="user-name">{{ user.name }}</p>
+  </div>
+  <div class="dashboard-content">
+    <div *ngFor="let card of cards" class="dashboard-card">
+      <img [src]="card.img" />
+      <p>{{ card.description | translate }}</p>
+    </div>
+  </div>
+</ion-content>

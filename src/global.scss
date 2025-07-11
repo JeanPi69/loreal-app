@@ -37,12 +37,21 @@
 @import "@ionic/angular/css/palettes/dark.system.css";
 
 // Activar para ver lineas de contorno de los elementos
-/* * {
+* {
   outline: 1px solid rgba(0, 0, 0, 0.2);
-} */
+}
 
 ion-content{
   --background: url("./assets/login/img/background_complete.png") 0 0/100% 100% no-repeat;
+}
+
+P{
+  color: black;
+}
+
+ion-icon{
+  --color:black;
+  color: black;
 }
 
 ion-input {
@@ -50,4 +59,27 @@ ion-input {
   color: black !important;
   --placeholder-color: black !important;
   --border: 1px solid black !important;
+}
+
+app-menu-layout ion-content,
+app-menu-layout ion-router-outlet ion-content {
+  --background: transparent !important;
+  background: transparent !important;
+}
+
+.app-menu-layout{
+  background: url("./assets/login/img/background_complete.png") 0 0/100% 100% no-repeat;
+  width: 100vw;
+  height: 100vh;
+}
+
+.logo-img {
+  display: flex;
+  justify-content: flex-end;
+  margin-left: auto;
+  width: 35%;
+  &_menu{
+    margin-left:0;
+    justify-content: flex-start;
+  }
 }

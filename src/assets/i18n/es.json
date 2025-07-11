@@ -34,7 +34,8 @@
             "PASSWORD": "CONTRASEÑA",
             "LOGIN": "INICIAR SESIÓN",
             "BACK": "VOLVER",
-            "FORGOT_PASSWORD": "¿OLVIDÓ SU CONTRASEÑA?"
+            "FORGOT_PASSWORD": "¿OLVIDÓ SU CONTRASEÑA?",
+            "LOGIN_LOADING": "INICIANDO SESIÓN..."
         },
         "RECOVER_PASSWORD": {
             "RECOVER": "RECUPERAR"
@@ -59,7 +60,9 @@
             "CHANGE_PASSWORD": "CAMBIAR CONTRASEÑA"
         },
         "MEDIA": "FOTOS / VIDEOS",
-        "SCIENTIFIC": "ESTUDIOS CIENTÍFICOS"
+        "SCIENTIFIC": "ESTUDIOS CIENTÍFICOS",
+        "SOCIAL": "SOCIAL",
+        "TRIVIA": "TRIVIA"
     },
     "SPEAKERS": {
         "TITLE": "EXPOSITORES"
@@ -118,5 +121,10 @@
         "THIRD_QUESTION": "3.- ¿QUÉ TEMA TE GUSTARÍA QUE ABORDEMOS A FUTURO?",
         "NEXT_BUTTON": "SIGUIENTE",
         "SEND_BUTTON": "ENVIAR"
+    },
+    "ERRORS":{
+        "LOGIN_FAILED": "Error en correo o contraseña. Por favor intente nuevamente.",
+        "UNEXPECTED_ERROR": "Ha ocurrido un error inesperado. Por favor intente más tarde.",
+        "REQUIRED_FIELD": "Este campo es obligatorio."
     }
 }

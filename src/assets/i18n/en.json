@@ -34,7 +34,8 @@
             "PASSWORD": "PASSWORD",
             "LOGIN": "LOG IN",
             "BACK": "BACK",
-            "FORGOT_PASSWORD": "¿FORGOT YOUR PASSWORD?"
+            "FORGOT_PASSWORD": "¿FORGOT YOUR PASSWORD?",
+            "LOGIN_LOADING": "LOGGING IN..."
         },
         "RECOVER_PASSWORD": {
             "RECOVER": "RECOVER"
@@ -59,7 +60,9 @@
             "CHANGE_PASSWORD": "CHANGE PASSWORD"
         },
         "MEDIA": "PHOTOS / VIDEOS",
-        "SCIENTIFIC": "SCIENTIFIC STUDIES"
+        "SCIENTIFIC": "SCIENTIFIC STUDIES",
+        "SOCIAL": "SOCIAL",
+        "TRIVIA": "TRIVIA"
     },
     "SPEAKERS": {
         "TITLE": "SPEAKERS"
@@ -117,5 +120,10 @@
         "THIRD_QUESTION": "3.- WHAT TOPIC WOULD YOU LIKE US TO ADDRESS IN THE FUTURE?",
         "NEXT_BUTTON": "NEXT",
         "SEND_BUTTON": "SEND"
+    },
+    "ERRORS":{
+        "LOGIN_FAILED": "Error in email or password. Please try again.",
+        "UNEXPECTED_ERROR": "An unexpected error has occurred. Please try again later.",
+        "REQUIRED_FIELD": "This field is required."
     }
 }
