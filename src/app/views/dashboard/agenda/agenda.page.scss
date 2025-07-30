@@ -1,0 +1,34 @@
+ion-content {
+  --background: white;
+  background: white;
+}
+
+ion-segment-button {
+  --color: black;
+}
+
+.agenda-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.day{
+    font-weight: 600;
+    color: black;
+}
+
+.time {
+  margin: 0;
+  font-weight: 500;
+  color: black;
+  background-color: #48c4ff;
+  padding: 8px 13px;
+  font-weight: 600;
+}
+
+.info-div{
+    border: 1px solid black;
+    padding: 10px;
+}

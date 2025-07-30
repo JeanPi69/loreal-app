@@ -11,6 +11,7 @@ import { DashboardService } from 'src/app/services/dashboard/dashboard.service';
 })
 export class ConectivityPage implements OnInit {
 
+  isLoading = true;
   connectivities: Connectivity[] = []
 
   constructor(private translate: TranslateService, private dashboardService: DashboardService) { }
@@ -20,12 +21,16 @@ export class ConectivityPage implements OnInit {
   }
 
   getData(){
+    this.isLoading = true;
+    console.log('getData start - isLoading:', this.isLoading)
     this.dashboardService.getConnectivity().subscribe({
       next: (response) => {
         this.connectivities = response.data.connectivity;
+        this.isLoading = false;
       },
       error: (error) => {
         console.error('Error fetching connectivity data:', error);
+        this.isLoading = false;
       }
     });
   }

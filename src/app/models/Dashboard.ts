@@ -36,4 +36,26 @@ export interface Speaker {
   document3: string;
   image: string;
   name: string;
+  specialty: string;
+}
+
+export interface AgendaResponse {
+  success: boolean;
+  data: {
+    agenda: AgendaItem[];
+  }
+}
+
+export interface AgendaItem{
+  id: number;
+  name: string;
+  agenda: Agenda[];
+}
+
+export interface Agenda{
+  agenda_category_id: number;
+  id: number;
+  speakers: Speaker[];
+  start_date: string;
+  subject: string;
 }

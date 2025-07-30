@@ -5,16 +5,33 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-list>
+  <!-- Skeleton Loader -->
+  <ion-list *ngIf="isLoading">
+    <ion-item *ngFor="let item of [1,2,3]" lines="none">
+      <ion-label>
+        <div style="display: flex; margin-bottom: 8px; align-items: center;">
+          <div class="skeleton-item" style="width: 80px; height: 16px;"></div>
+          <div class="skeleton-item" style="width: 120px; height: 16px; margin-left: 8px;"></div>
+        </div>
+        <div style="display: flex; align-items: center;">
+          <div class="skeleton-item" style="width: 90px; height: 16px;"></div>
+          <div class="skeleton-item" style="width: 100px; height: 16px; margin-left: 8px;"></div>
+        </div>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <!-- Contenido real -->
+  <ion-list *ngIf="!isLoading">
     <ion-item *ngFor="let connectivity of connectivities">
       <ion-label>
-        <div style="display: flex; margin-bottom: 8px;">
+        <div style="display: flex; margin-bottom: 8px">
           <span>{{ 'CONNECTIVITY.NETWORK' | translate | titlecase}}:</span>
-          <span style="margin-left: 5px;">{{ connectivity.ssid }}</span>
+          <span style="margin-left: 5px">{{ connectivity.ssid }}</span>
         </div>
-        <div style="display: flex;">
+        <div style="display: flex">
           <span>{{ 'CONNECTIVITY.PASSWORD' | translate | titlecase}}:</span>
-          <span style="margin-left: 5px;">{{ connectivity.password }}</span>
+          <span style="margin-left: 5px">{{ connectivity.password }}</span>
         </div>
       </ion-label>
     </ion-item>

@@ -73,15 +73,15 @@
     },
     "AGENDA": {
         "TITLE": "AGENDA",
+        "MONDAY": "MONDAY",
+        "TUESDAY": "TUESDAY",
+        "WEDNESDAY": "WEDNESDAY",
+        "THURSDAY": "THURSDAY",
         "FRIDAY": "FRIDAY",
+        "SATURDAY": "SATURDAY",
         "SUNDAY": "SUNDAY",
         "MONTH": "SEPTEMBER",
-        "LUNES": "MONDAY",
-        "MARTES": "TUESDAY",
-        "MIERCOLES": "WEDNESDAY",
-        "JUEVES": "THURSDAY",
-        "VIERNES": "FRIDAY",
-        "SABADO": "SATURDAY"
+        "LOADING": "LOADING AGENDA..."
     },
     "CHANGE_PASSWORD": {
         "LAST_PASSWORD": "LAST PASSWORD",

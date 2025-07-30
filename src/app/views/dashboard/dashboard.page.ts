@@ -5,6 +5,7 @@ import { User } from 'src/app/models/Login';
 import { ConectivityPage } from './conectivity/conectivity.page';
 import { Card } from 'src/app/models/Dashboard';
 import { SpeakersPage } from './speakers/speakers.page';
+import { AgendaPage } from './agenda/agenda.page';
 
 @Component({
   selector: 'app-dashboard',
@@ -18,7 +19,8 @@ export class DashboardPage implements OnInit {
   cards: Card[] = [
     {
       img: '../../../assets/dashboard/cards/agenda.png',
-      description: 'HOME.DIARY'
+      description: 'HOME.DIARY',
+      component: AgendaPage
     },
     {
       img: '../../../assets/dashboard/cards/connectivity.png',
