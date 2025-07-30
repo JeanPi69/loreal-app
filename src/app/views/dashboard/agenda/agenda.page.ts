@@ -14,20 +14,19 @@ export class AgendaPage implements OnInit {
   selectedDate = '2023-09-22';
   agenda: AgendaItem[] = [];
 
-  constructor(private dashboardService: DashboardService, private translate: TranslateService, private loadingCtrl: LoadingController) {}
+  isLoading = true;
+
+  constructor(private dashboardService: DashboardService, private translate: TranslateService) {}
 
   ngOnInit() {
     this.getData();
   }
 
   async getData() {
-    const loading = await this.loadingCtrl.create({
-      message: this.translate.instant('AGENDA.LOADING'),
-    });
-    await loading.present();
+    this.isLoading = true;
     this.dashboardService.getAgenda(this.selectedDate).subscribe((res) => {
       this.agenda = res.data.agenda;
-      loading.dismiss();
+      this.isLoading = false;
     });
   }
 

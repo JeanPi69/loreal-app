@@ -13,7 +13,29 @@
       >{{'AGENDA.SATURDAY' | translate}} 23</ion-segment-button
     >
   </ion-segment>
-  <ion-list>
+
+    <ion-list *ngIf="isLoading">
+    <div *ngFor="let item of [1,2,3]">
+      <!-- Skeleton para el título de sección -->
+      <div class="skeleton-item skeleton-section-title"></div>
+      
+      <!-- Skeleton para items de agenda -->
+      <ion-item lines="none" *ngFor="let agendaItem of [1,2,3]">
+        <ion-label>
+          <div class="agenda-row">
+            <div class="skeleton-item skeleton-date"></div>
+            <div class="skeleton-item skeleton-time"></div>
+          </div>
+          <div class="info-div">
+            <div class="skeleton-item skeleton-speaker"></div>
+            <div class="skeleton-item skeleton-subject"></div>
+          </div>
+        </ion-label>
+      </ion-item>
+    </div>
+  </ion-list>
+
+  <ion-list *ngIf="!isLoading">
     <div *ngFor="let item of agenda">
       <h2 *ngIf="item.name" style="font-size: 24px; font-weight: bold; color:black; margin:16px;">{{item.name}}</h2>
       <ion-item lines="none" *ngFor="let agendaItem of item.agenda">
