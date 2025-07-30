@@ -6,6 +6,7 @@ import { ConectivityPage } from './conectivity/conectivity.page';
 import { Card } from 'src/app/models/Dashboard';
 import { SpeakersPage } from './speakers/speakers.page';
 import { AgendaPage } from './agenda/agenda.page';
+import { TourPage } from './tour/tour.page';
 
 @Component({
   selector: 'app-dashboard',
@@ -47,6 +48,7 @@ export class DashboardPage implements OnInit {
     {
       img: '../../../assets/dashboard/cards/tour.png',
       description: 'HOME.TOUR',
+      component: TourPage
     },
     {
       img: '../../../assets/dashboard/cards/trivia.png',

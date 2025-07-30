@@ -43,7 +43,8 @@ export interface AgendaResponse {
   success: boolean;
   data: {
     agenda: AgendaItem[];
-  }
+  },
+  errors?: string;
 }
 
 export interface AgendaItem{
@@ -58,4 +59,18 @@ export interface Agenda{
   speakers: Speaker[];
   start_date: string;
   subject: string;
+}
+
+export interface TourResponse {
+  success: boolean;
+  data: {
+    tours: Tour;
+  },
+  errors?: string;
+}
+
+export interface Tour{
+  id: number;
+  description: string;
+  title: string;
 }

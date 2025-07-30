@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { DashboardService } from '../../../services/dashboard/dashboard.service';
 import { AgendaItem } from '../../../models/Dashboard';
 import { TranslateService } from '@ngx-translate/core';
-import { LoadingController } from '@ionic/angular';
 
 @Component({
   selector: 'app-agenda',

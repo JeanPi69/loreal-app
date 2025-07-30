@@ -1,0 +1,41 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>{{'HOME.TOUR' | translate}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <!-- Skeleton para la imagen -->
+  <div *ngIf="isLoading" class="skeleton-item skeleton-image"></div>
+
+  <!-- Imagen real -->
+  <ion-img
+    *ngIf="!isLoading"
+    src="https://loreal.adpeople.work/tour.b495627ffcf514e6.jpg"
+    alt="Tour Image"
+    loading="lazy"
+  >
+  </ion-img>
+
+  <!-- Skeleton Loader -->
+  <ion-list *ngIf="isLoading">
+    <ion-item lines="none">
+      <ion-label>
+        <div class="skeleton-item skeleton-title"></div>
+        <div class="skeleton-item skeleton-description-line1"></div>
+        <div class="skeleton-item skeleton-description-line2"></div>
+        <div class="skeleton-item skeleton-description-line3"></div>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <!-- Contenido real -->
+  <ion-list *ngIf="!isLoading">
+    <ion-item lines="none">
+      <ion-label>
+        <h2 style="color: black; font-weight: bold">{{ tour.title }}</h2>
+        <p style="color: black; margin-top: 8px">{{ tour.description }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

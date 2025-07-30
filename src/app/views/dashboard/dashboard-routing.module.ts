@@ -22,6 +22,10 @@ const routes: Routes = [
   {
     path: 'agenda',
     loadChildren: () => import('./agenda/agenda.module').then( m => m.AgendaPageModule)
+  },
+  {
+    path: 'tour',
+    loadChildren: () => import('./tour/tour.module').then( m => m.TourPageModule)
   }
 
 ];
