@@ -5,10 +5,33 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-grid>
+  <!-- Skeleton Loader -->
+  <ion-grid *ngIf="isLoading">
+    <ion-row>
+      <ion-col size="6" *ngFor="let item of [1,2,3,4,5,6]">
+        <ion-card class="skeleton-card">
+          <ion-skeleton-text
+            animated
+            class="skeleton-image"
+          ></ion-skeleton-text>
+          <ion-skeleton-text animated class="skeleton-name"></ion-skeleton-text>
+          <ion-skeleton-text
+            animated
+            class="skeleton-description"
+          ></ion-skeleton-text>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <!-- Contenido real -->
+  <ion-grid *ngIf="!isLoading">
     <ion-row>
       <ion-col size="6" *ngFor="let speaker of speakers">
-        <ion-card style="text-align: center" (click)="openSpeakerDetail(speaker)">
+        <ion-card
+          style="text-align: center"
+          (click)="openSpeakerDetail(speaker)"
+        >
           <img
             style="width: 120px; height: 120px"
             [src]="speaker.image"

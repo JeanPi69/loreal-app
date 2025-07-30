@@ -1,6 +1,11 @@
 <div class="app-menu-layout">
   <div
-    style="display: flex; flex-direction: row; justify-content: space-between"
+    style="
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      padding: 8px;
+    "
   >
     <img
       class="logo-img logo-img_menu"
@@ -24,26 +29,28 @@
         lazy="true"
         size="large"
       ></ion-icon>
+      <ion-popover trigger="click-trigger">
+        <ng-template>
+          <ion-content class="not-background-content">
+            <ion-list>
+              <ion-item>
+                <ion-icon name="lock-closed-outline"></ion-icon>
+                <ion-label
+                  >{{'CHANGE_PASSWORD.CHANGE_PASSWORD' | translate}}</ion-label
+                >
+              </ion-item>
+              <ion-item (click)="logout()">
+                <ion-icon name="log-out-outline" lazy="true"></ion-icon>
+                <ion-label>{{'AUTH.LOGOUT.LOGOUT' | translate}}</ion-label>
+              </ion-item>
+            </ion-list>
+          </ion-content>
+        </ng-template>
+      </ion-popover>
     </div>
   </div>
+
   <ion-content>
     <ion-router-outlet></ion-router-outlet>
   </ion-content>
 </div>
-
-<ion-popover trigger="click-trigger">
-  <ng-template>
-    <ion-content class="not-background-content">
-      <ion-list>
-        <ion-item>
-          <ion-icon name="lock-closed-outline"></ion-icon>
-          <ion-label>{{'CHANGE_PASSWORD.CHANGE_PASSWORD' | translate}}</ion-label>
-        </ion-item>
-        <ion-item (click)="logout()">
-          <ion-icon name="log-out-outline" lazy="true"></ion-icon>
-          <ion-label>{{'AUTH.LOGOUT.LOGOUT' | translate}}</ion-label>
-        </ion-item>
-      </ion-list>
-    </ion-content>
-  </ng-template>
-</ion-popover>

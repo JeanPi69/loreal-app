@@ -1,0 +1,234 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>{{ 'REGISTER.LABEL' | translate }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <ion-grid>
+      <ion-row>
+        <!-- Nombres -->
+        <ion-col size="12" size-md="6">
+          <ion-item>
+            <ion-input
+              class="ion-margin-top"
+              fill="outline"
+              formControlName="firstName"
+              label="Nombres *"
+              labelPlacement="floating"
+              placeholder="Ingresa tus nombres"
+              type="text"
+              [class.error]="registerForm.get('firstName')?.invalid && registerForm.get('firstName')?.touched"
+            ></ion-input>
+          </ion-item>
+        </ion-col>
+
+        <!-- Apellidos -->
+        <ion-col size="12" size-md="6">
+          <ion-item>
+            <ion-input
+              class="ion-margin-top"
+              fill="outline"
+              formControlName="lastName"
+              label="Apellidos *"
+              labelPlacement="floating"
+              placeholder="Ingresa tus apellidos"
+              type="text"
+              [class.error]="registerForm.get('lastName')?.invalid && registerForm.get('lastName')?.touched"
+            ></ion-input>
+          </ion-item>
+        </ion-col>
+
+        <!-- Email -->
+        <ion-col size="12">
+          <ion-item>
+            <ion-input
+              class="ion-margin-top"
+              fill="outline"
+              formControlName="email"
+              label="Correo Electrónico *"
+              labelPlacement="floating"
+              placeholder="ejemplo@correo.com"
+              type="email"
+              [class.error]="registerForm.get('email')?.invalid && registerForm.get('email')?.touched"
+            ></ion-input>
+          </ion-item>
+        </ion-col>
+
+        <!-- País -->
+        <ion-col size="12" size-md="6">
+          <ion-item>
+            <ion-select
+              class="ion-margin-top"
+              fill="outline"
+              formControlName="country"
+              label="País *"
+              labelPlacement="floating"
+              placeholder="Selecciona país"
+              [class.error]="registerForm.get('country')?.invalid && registerForm.get('country')?.touched"
+            >
+              <ion-select-option
+                *ngFor="let country of countries"
+                [value]="country.id"
+              >
+                {{ country.name }}
+              </ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-col>
+
+        <!-- Ciudad -->
+        <ion-col size="12" size-md="6">
+          <ion-item>
+            <ion-input
+              class="ion-margin-top"
+              fill="outline"
+              formControlName="city"
+              label="Ciudad *"
+              labelPlacement="floating"
+              placeholder="Ingresa tu ciudad"
+              type="text"
+              [class.error]="registerForm.get('city')?.invalid && registerForm.get('city')?.touched"
+            ></ion-input>
+          </ion-item>
+        </ion-col>
+
+        <!-- Código -->
+        <ion-col size="6" size-md="6">
+          <ion-item>
+            <ion-select
+              class="ion-margin-top"
+              fill="outline"
+              formControlName="code"
+              label="Código *"
+              labelPlacement="floating"
+              placeholder="Selecciona código"
+              [class.error]="registerForm.get('code')?.invalid && registerForm.get('code')?.touched"
+            >
+              <ion-select-option
+                *ngFor="let country of countries"
+                [value]="country.phone_code"
+              >
+                {{ country.name }} ({{ country.phone_code }})
+              </ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-col>
+
+        <!-- Celular -->
+        <ion-col size="6" size-md="6">
+          <ion-item>
+            <ion-input
+              class="ion-margin-top"
+              fill="outline"
+              formControlName="phone"
+              label="Celular *"
+              labelPlacement="floating"
+              placeholder="987654321"
+              type="tel"
+              [class.error]="registerForm.get('phone')?.invalid && registerForm.get('phone')?.touched"
+            ></ion-input>
+          </ion-item>
+        </ion-col>
+
+        <!-- Tipo de Documento -->
+        <ion-col size="6" size-md="6">
+          <ion-item>
+            <ion-select
+              class="ion-margin-top"
+              fill="outline"
+              formControlName="documentType"
+              label="Tipo de Documento *"
+              labelPlacement="floating"
+              placeholder="Selecciona tipo"
+              [class.error]="registerForm.get('documentType')?.invalid && registerForm.get('documentType')?.touched"
+            >
+              <ion-select-option
+                *ngFor="let type of documentTypes"
+                [value]="type.value"
+              >
+                {{ type.label }}
+              </ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-col>
+
+        <!-- Documento -->
+        <ion-col size="6" size-md="6">
+          <ion-item>
+            <ion-input
+              class="ion-margin-top"
+              fill="outline"
+              formControlName="document"
+              label="Número de Documento *"
+              labelPlacement="floating"
+              placeholder="Número de documento"
+              type="text"
+              [class.error]="registerForm.get('document')?.invalid && registerForm.get('document')?.touched"
+            ></ion-input>
+          </ion-item>
+        </ion-col>
+
+        <!-- Preferencia Alimenticia -->
+        <ion-col size="12">
+          <ion-item>
+            <ion-select
+              class="ion-margin-top"
+              fill="outline"
+              formControlName="dietaryPreference"
+              label="Preferencia Alimenticia *"
+              labelPlacement="floating"
+              placeholder="Selecciona preferencia"
+              [class.error]="registerForm.get('dietaryPreference')?.invalid && registerForm.get('dietaryPreference')?.touched"
+            >
+              <ion-select-option
+                *ngFor="let pref of dietaryPreferences"
+                [value]="pref.value"
+              >
+                {{ pref.label }}
+              </ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-col>
+
+        <!-- Contraseña -->
+        <ion-col size="12">
+          <ion-item>
+            <ion-input
+              class="ion-margin-top"
+              fill="outline"
+              formControlName="password"
+              label="Contraseña *"
+              labelPlacement="floating"
+              placeholder="Mínimo 8 caracteres"
+              type="password"
+              [class.error]="registerForm.get('password')?.invalid && registerForm.get('password')?.touched"
+            ></ion-input>
+          </ion-item>
+        </ion-col>
+
+        <!-- Recibir Notificaciones -->
+        <ion-col size="12">
+          <ion-item lines=none>
+            <ion-label class="ion-margin-start" style="font-weight: 600; ">
+              DESEO RECIBIR NOTIFICACIONES E INFORMACIÓN SOBRE EL EVENTO
+            </ion-label>
+            <ion-checkbox slot="end" formControlName="receiveNotifications"></ion-checkbox>
+          </ion-item>
+        </ion-col>
+
+        <!-- Botón de Registro -->
+        <ion-col size="12">
+          <ion-button
+            type="submit"
+            expand="block"
+            [disabled]="registerForm.invalid"
+          >
+            Registrarse
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+</ion-content>

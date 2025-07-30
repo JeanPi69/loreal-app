@@ -80,7 +80,7 @@ export class DashboardPage implements OnInit {
     if(!component) return;
     const modal = await this.modalCtrl.create({
       component,
-      breakpoints: [1],
+      breakpoints: [0,1],
       initialBreakpoint: 1,
     });
     await modal.present();

@@ -1,13 +1,42 @@
-ion-content{
-    --background: white;
-    background: white;
+ion-content {
+  --background: white;
+  background: white;
 }
 
-ion-card{
-    box-shadow: none;
-    background: none;
-    border: none;
-    --box-shadow: none;
-    --background: none;
-    --border: none;
+ion-card {
+  box-shadow: none;
+  background: none;
+  border: none;
+  --box-shadow: none;
+  --background: none;
+  --border: none;
+}
+
+ion-skeleton-text {
+  --background: #e1e1e1;
+  --background-rgb: 225, 225, 225;
+  border-radius: 4px;
+}
+
+.skeleton-card {
+  padding: 16px;
+
+  .skeleton-image {
+    width: 120px;
+    height: 120px;
+    border-radius: 8px;
+    margin: 0 auto 12px auto;
+  }
+
+  .skeleton-name {
+    width: 80%;
+    height: 16px;
+    margin: 8px auto;
+  }
+
+  .skeleton-description {
+    width: 60%;
+    height: 14px;
+    margin: 4px auto;
+  }
 }

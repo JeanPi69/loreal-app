@@ -1,0 +1,68 @@
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Country } from 'src/app/models/Register';
+import { RegisterService } from 'src/app/services/register/register.service';
+
+@Component({
+  selector: 'app-register',
+  templateUrl: './register.page.html',
+  styleUrls: ['./register.page.scss'],
+  standalone: false,
+})
+export class RegisterPage implements OnInit {
+  registerForm: FormGroup;
+  countries: Country[] = [];
+
+  documentTypes = [
+    { value: 'dni', label: 'DNI' },
+    { value: 'passport', label: 'Pasaporte' },
+  ];
+
+  dietaryPreferences = [
+    { value: 'kosher', label: 'Kosher' },
+    { value: 'vegetarian', label: 'Vegetariano' },
+    { value: 'vegan', label: 'Vegano' },
+    { value: 'pescetariano', label: 'Pescetariano' },
+    { value: 'sin preferencias', label: 'Sin Preferencias' },
+    { value: 'otros', label: 'Otros' },
+  ];
+
+  constructor(
+    private fb: FormBuilder,
+    private registerService: RegisterService
+  ) {
+    this.registerForm = this.fb.group({
+      firstName: ['', [Validators.required, Validators.minLength(2)]],
+      lastName: ['', [Validators.required, Validators.minLength(2)]],
+      email: ['', [Validators.required, Validators.email]],
+      city: ['', [Validators.required]],
+      phone: ['', [Validators.required, Validators.pattern(/^[0-9]{9,15}$/)]],
+      document: ['', [Validators.required]],
+      documentType: ['', [Validators.required]],
+      country: ['', [Validators.required]],
+      code: [null, [Validators.required]],
+      dietaryPreference: ['', [Validators.required]],
+      password: ['', [Validators.required, Validators.minLength(8)]],
+      receiveNotifications: [false],
+    });
+  }
+
+  ngOnInit() {
+    this.getCountries();
+  }
+
+  getCountries() {
+    this.registerService.getCountries().subscribe((res) => {
+      this.countries = res.data;
+    });
+  }
+
+  onSubmit() {
+    this.registerForm.markAllAsTouched();
+    if (this.registerForm.valid) {
+      console.log('Form data:', this.registerForm.value);
+    } else {
+      console.log('Form data:', this.registerForm.value);
+    }
+  }
+}

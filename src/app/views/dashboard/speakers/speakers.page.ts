@@ -12,35 +12,40 @@ import { SpeakerDetailPage } from './speaker-detail/speaker-detail.page';
 })
 export class SpeakersPage implements OnInit {
   speakers: Speaker[] = [];
+  isLoading = true;
 
-  constructor(private dashboardService: DashboardService, private modalCtrl: ModalController) {}
+  constructor(
+    private dashboardService: DashboardService,
+    private modalCtrl: ModalController
+  ) {}
 
   ngOnInit() {
     this.getSpeakers();
   }
 
   getSpeakers() {
+    this.isLoading = true;
     this.dashboardService.getSpeakers().subscribe({
       next: (res) => {
         this.speakers = res.data.speakers;
-        console.log('Speakers fetched successfully:', this.speakers);
+        this.isLoading = false;
       },
       error: (error) => {
         console.error('Error fetching speakers:', error);
+        this.isLoading = false;
       },
     });
   }
 
-  async openSpeakerDetail(speaker: Speaker){
+  async openSpeakerDetail(speaker: Speaker) {
     const modal = await this.modalCtrl.create({
       component: SpeakerDetailPage,
       componentProps: {
-        speaker: speaker
+        speaker: speaker,
       },
-      breakpoints: [1],
-      initialBreakpoint: 1
+      breakpoints: [0,1],
+      initialBreakpoint: 1,
     });
     await modal.present();
   }
-
 }

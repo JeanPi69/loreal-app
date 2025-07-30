@@ -23,6 +23,10 @@ const routes: Routes = [
       import('./container/menu-layout/menu-layout.module').then(
         (m) => m.MenuLayoutPageModule
       ),
+  },
+  {
+    path: 'register',
+    loadChildren: () => import('./views/register/register.module').then( m => m.RegisterPageModule)
   }
 ];
 

@@ -130,5 +130,8 @@
         "LOGIN_FAILED": "Error in email or password. Please try again.",
         "UNEXPECTED_ERROR": "An unexpected error has occurred. Please try again later.",
         "REQUIRED_FIELD": "This field is required."
+    },
+    "REGISTER":{
+        "LABEL": "REGISTER"
     }
 }
