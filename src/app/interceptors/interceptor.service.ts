@@ -21,12 +21,16 @@ export class InterceptorService implements HttpInterceptor {
     next: HttpHandler
   ): Observable<HttpEvent<any>> {
     const token = localStorage.getItem('token');
+    const language = localStorage.getItem('lang') || 'es';
 
     if (token) {
       request = request.clone({
         setHeaders: {
           Authorization: `Bearer ${token}`,
         },
+        setParams:{
+          language: language
+        }
       });
     }
 

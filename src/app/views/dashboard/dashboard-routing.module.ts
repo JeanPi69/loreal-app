@@ -14,6 +14,10 @@ const routes: Routes = [
   {
     path: 'change-password',
     loadChildren: () => import('./change-password/change-password.module').then( m => m.ChangePasswordPageModule)
+  },
+  {
+    path: 'speakers',
+    loadChildren: () => import('./speakers/speakers.module').then( m => m.SpeakersPageModule)
   }
 
 ];

@@ -16,7 +16,7 @@ export class DashboardService {
     return this.http.get<ConnectivityResponse>(`${this.url}/connectivity`);
   }
 
-  getExpositors(): Observable<SpeakersResponse>{
+  getSpeakers(): Observable<SpeakersResponse>{
     return this.http.get<SpeakersResponse>(`${this.url}/speakers`);
   }
 

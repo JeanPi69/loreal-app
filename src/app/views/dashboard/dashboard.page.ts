@@ -4,6 +4,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { User } from 'src/app/models/Login';
 import { ConectivityPage } from './conectivity/conectivity.page';
 import { Card } from 'src/app/models/Dashboard';
+import { SpeakersPage } from './speakers/speakers.page';
 
 @Component({
   selector: 'app-dashboard',
@@ -27,6 +28,7 @@ export class DashboardPage implements OnInit {
     {
       img: '../../../assets/dashboard/cards/expositores.png',
       description: 'HOME.EXHIBITORS',
+      component: SpeakersPage
     },
     {
       img: '../../../assets/dashboard/cards/mapa.png',

@@ -25,7 +25,7 @@ export interface SpeakersResponse {
   data: {
     speakers: Speaker[];
   },
-  error?: string;
+  errors?: string;
 }
 
 export interface Speaker {
