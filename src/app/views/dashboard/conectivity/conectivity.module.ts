@@ -4,9 +4,9 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { MenuLayoutPageRoutingModule } from './menu-layout-routing.module';
+import { ConectivityPageRoutingModule } from './conectivity-routing.module';
 
-import { MenuLayoutPage } from './menu-layout.page';
+import { ConectivityPage } from './conectivity.page';
 import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
@@ -14,9 +14,9 @@ import { TranslateModule } from '@ngx-translate/core';
     CommonModule,
     FormsModule,
     IonicModule,
-    MenuLayoutPageRoutingModule,
+    ConectivityPageRoutingModule,
     TranslateModule
   ],
-  declarations: [MenuLayoutPage]
+  declarations: [ConectivityPage]
 })
-export class MenuLayoutPageModule {}
+export class ConectivityPageModule {}

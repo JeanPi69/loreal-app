@@ -17,4 +17,12 @@ export class AuthService {
     return this.http.post<LoginResponse>(`${this.url}/login`, { email, password });
   }
 
+  logout(){
+    return this.http.post(`${this.url}/admin/logout`, {});
+  }
+
+  forgotPassword(email: string): Observable<any>{
+    return this.http.post(`${this.url}/forgot-password`, {email});
+  }
+
 }

@@ -7,7 +7,15 @@ const routes: Routes = [
   {
     path: '',
     component: DashboardPage
+  },  {
+    path: 'conectivity',
+    loadChildren: () => import('./conectivity/conectivity.module').then( m => m.ConectivityPageModule)
+  },
+  {
+    path: 'change-password',
+    loadChildren: () => import('./change-password/change-password.module').then( m => m.ChangePasswordPageModule)
   }
+
 ];
 
 @NgModule({

@@ -39,6 +39,10 @@
         },
         "RECOVER_PASSWORD": {
             "RECOVER": "RECUPERAR"
+        },
+        "LOGOUT":{
+            "LOGOUT": "CERRAR SESIÓN",
+            "LOGOUT_LOADING": "CERRANDO SESIÓN..."
         }
     },
     "POLICY": {
@@ -84,7 +88,8 @@
         "LAST_PASSWORD": "CONTRASEÑA ANTERIOR",
         "NEW_PASSWORD": "NUEVA CONTRASEÑA",
         "CONFIRM_PASSWORD": "CONFIRMAR NUEVA CONTRASEÑA",
-        "SEND_BUTTON": "ENVIAR"
+        "SEND_BUTTON": "ENVIAR",
+        "CHANGE_PASSWORD": "CAMBIAR CONTRASEÑA"
     },
     "TRIPS": {
         "AIRLINE": "AEROLÍNEA",

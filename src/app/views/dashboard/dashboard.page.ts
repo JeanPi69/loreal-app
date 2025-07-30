@@ -1,32 +1,71 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Type } from '@angular/core';
+import { ModalController } from '@ionic/angular';
 import { TranslateService } from '@ngx-translate/core';
 import { User } from 'src/app/models/Login';
+import { ConectivityPage } from './conectivity/conectivity.page';
+import { Card } from 'src/app/models/Dashboard';
 
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.page.html',
   styleUrls: ['./dashboard.page.scss'],
-  standalone: false
+  standalone: false,
 })
 export class DashboardPage implements OnInit {
-
   user!: User;
 
-  cards = [
-    { img: '../../../assets/dashboard/cards/agenda.png', description: 'HOME.DIARY' , url: ''},
-    { img: '../../../assets/dashboard/cards/connectivity.png', description: 'HOME.CONNECTIVITY' , url: ''},
-    { img: '../../../assets/dashboard/cards/expositores.png', description: 'HOME.EXHIBITORS' , url: ''},
-    { img: '../../../assets/dashboard/cards/mapa.png', description: 'HOME.MAP' , url: ''},
-    { img: '../../../assets/dashboard/cards/media.png', description: 'HOME.MEDIA' , url: ''},
-    { img: '../../../assets/dashboard/cards/social.png', description: 'HOME.SOCIAL' , url: ''},
-    { img: '../../../assets/dashboard/cards/tour.png', description: 'HOME.TOUR' , url: ''},
-    { img: '../../../assets/dashboard/cards/trivia.png', description: 'HOME.TRIVIA' , url: ''},
-    { img: '../../../assets/dashboard/cards/scientific.png', description: 'HOME.SCIENTIFIC' , url: ''},
-    { img: '../../../assets/dashboard/cards/peru.png', description: 'HOME.PERU' , url: ''},
-    { img: '../../../assets/dashboard/cards/recommendations.png', description: 'HOME.RECOMMENDATIONS' , url: ''}
-  ]
+  cards: Card[] = [
+    {
+      img: '../../../assets/dashboard/cards/agenda.png',
+      description: 'HOME.DIARY'
+    },
+    {
+      img: '../../../assets/dashboard/cards/connectivity.png',
+      description: 'HOME.CONNECTIVITY',
+      component: ConectivityPage,
+    },
+    {
+      img: '../../../assets/dashboard/cards/expositores.png',
+      description: 'HOME.EXHIBITORS',
+    },
+    {
+      img: '../../../assets/dashboard/cards/mapa.png',
+      description: 'HOME.MAP',
+    },
+    {
+      img: '../../../assets/dashboard/cards/media.png',
+      description: 'HOME.MEDIA',
+    },
+    {
+      img: '../../../assets/dashboard/cards/social.png',
+      description: 'HOME.SOCIAL',
+    },
+    {
+      img: '../../../assets/dashboard/cards/tour.png',
+      description: 'HOME.TOUR',
+    },
+    {
+      img: '../../../assets/dashboard/cards/trivia.png',
+      description: 'HOME.TRIVIA',
+    },
+    {
+      img: '../../../assets/dashboard/cards/scientific.png',
+      description: 'HOME.SCIENTIFIC',
+    },
+    {
+      img: '../../../assets/dashboard/cards/peru.png',
+      description: 'HOME.PERU',
+    },
+    {
+      img: '../../../assets/dashboard/cards/recommendations.png',
+      description: 'HOME.RECOMMENDATIONS',
+    },
+  ];
 
-  constructor(private translate: TranslateService) { }
+  constructor(
+    private translate: TranslateService,
+    private modalCtrl: ModalController
+  ) {}
 
   ngOnInit() {
     const userString = localStorage.getItem('user');
@@ -35,4 +74,13 @@ export class DashboardPage implements OnInit {
     }
   }
 
+  async openCardModal(component?: Type<any>) {
+    if(!component) return;
+    const modal = await this.modalCtrl.create({
+      component,
+      breakpoints: [1],
+      initialBreakpoint: 1,
+    });
+    await modal.present();
+  }
 }

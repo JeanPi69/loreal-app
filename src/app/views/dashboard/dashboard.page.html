@@ -4,7 +4,7 @@
     <p class="user-name">{{ user.name }}</p>
   </div>
   <div class="dashboard-content">
-    <div *ngFor="let card of cards" class="dashboard-card">
+    <div *ngFor="let card of cards" class="dashboard-card" (click)="openCardModal(card?.component)">
       <img [src]="card.img" />
       <p>{{ card.description | translate }}</p>
     </div>

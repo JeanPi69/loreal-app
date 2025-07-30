@@ -37,12 +37,27 @@
 @import "@ionic/angular/css/palettes/dark.system.css";
 
 // Activar para ver lineas de contorno de los elementos
-* {
+/* * {
   outline: 1px solid rgba(0, 0, 0, 0.2);
-}
+} */
 
 ion-content{
   --background: url("./assets/login/img/background_complete.png") 0 0/100% 100% no-repeat;
+}
+
+.not-background-content{
+  --background: transparent !important;
+  background: transparent !important;
+}
+ion-list{
+  --background: white !important;
+  background: white !important;
+}
+ion-item{
+  --background: white !important;
+  background: white !important;
+  --color: black !important;
+  color: black !important;
 }
 
 P{
