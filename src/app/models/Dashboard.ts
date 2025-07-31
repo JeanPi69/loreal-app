@@ -105,3 +105,15 @@ export interface Recommendation {
   updated_at: string;
   web: string;
 }
+
+export interface DestiniesResponse {
+  success: boolean;
+  data: {
+    destinies: CountryData;
+  }
+}
+
+export interface CountryData{
+  id: number;
+  description: string;
+}

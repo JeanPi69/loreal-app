@@ -1,0 +1,33 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>{{'HOME.PERU' | translate}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <!-- Skeleton para imagen -->
+  <div *ngIf="isLoading" class="skeleton-item skeleton-image"></div>
+
+  <!-- Imagen real -->
+  <ion-img
+    *ngIf="!isLoading"
+    src="assets/dashboard/country/peru.webp"
+    alt="Peru Image"
+    loading="lazy"
+  >
+  </ion-img>
+
+  <!-- Skeleton para descripción -->
+  <div *ngIf="isLoading" class="skeleton-content">
+    <div class="skeleton-item skeleton-text-line"></div>
+    <div class="skeleton-item skeleton-text-line"></div>
+    <div class="skeleton-item skeleton-text-line-short"></div>
+  </div>
+
+  <!-- Descripción real con HTML interpretado -->
+  <p
+    *ngIf="!isLoading"
+    [innerHTML]="country.description"
+    class="description"
+  ></p>
+</ion-content>

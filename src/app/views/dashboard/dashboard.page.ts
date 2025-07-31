@@ -9,6 +9,7 @@ import { AgendaPage } from './agenda/agenda.page';
 import { TourPage } from './tour/tour.page';
 import { RecomendationsPage } from './recomendations/recomendations.page';
 import { MapsPage } from './maps/maps.page';
+import { CountryPage } from './country/country.page';
 
 @Component({
   selector: 'app-dashboard',
@@ -64,6 +65,7 @@ export class DashboardPage implements OnInit {
     {
       img: '../../../assets/dashboard/cards/peru.png',
       description: 'HOME.PERU',
+      component: CountryPage
     },
     {
       img: '../../../assets/dashboard/cards/recommendations.png',
