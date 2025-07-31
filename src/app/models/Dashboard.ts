@@ -74,3 +74,34 @@ export interface Tour{
   description: string;
   title: string;
 }
+
+export interface RecommendationsResponse {
+  success: boolean;
+  data:{
+    recommendations: RecommendationCategory[];
+  }
+}
+
+export interface RecommendationCategory {
+  id: number;
+  category: string;
+  image: string;
+}
+
+export interface RecommendationsByCategoryResponse{
+  success: boolean;
+  data: {
+    recommendations: Recommendation[];
+  }
+}
+
+export interface Recommendation {
+  id: number;
+  address: string;
+  created_at: string;
+  name: string;
+  phone: string;
+  recommendation_category_id: number;
+  updated_at: string;
+  web: string;
+}

@@ -26,6 +26,14 @@ const routes: Routes = [
   {
     path: 'tour',
     loadChildren: () => import('./tour/tour.module').then( m => m.TourPageModule)
+  },
+  {
+    path: 'recomendations',
+    loadChildren: () => import('./recomendations/recomendations.module').then( m => m.RecomendationsPageModule)
+  },
+  {
+    path: 'maps',
+    loadChildren: () => import('./maps/maps.module').then( m => m.MapsPageModule)
   }
 
 ];

@@ -133,5 +133,8 @@
   },
   "REGISTER": {
     "LABEL": "REGISTRO"
+  },
+  "RECOMMENDATIONS":{
+    "TITLE": "RECOMENDACIONES"
   }
 }

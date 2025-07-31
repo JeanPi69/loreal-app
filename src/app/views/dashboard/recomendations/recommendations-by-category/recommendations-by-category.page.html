@@ -1,0 +1,45 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>{{category.category}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list>
+    <ion-item
+      lines="none"
+      *ngFor="let recommendation of recommendations"
+      class="recommendation-item"
+    >
+      <ion-label>
+        <div class="name-row">
+          <ion-icon name="star" color="black"></ion-icon>
+          <h2>{{recommendation.name}}</h2>
+        </div>
+
+        <div class="details-column">
+          <div class="detail-item" *ngIf="recommendation.web">
+            <ion-icon name="globe-outline"></ion-icon>
+            <span class="link-text" (click)="openUrl(recommendation.web)"
+              >{{recommendation.web}}</span
+            >
+          </div>
+
+          <div class="detail-item" *ngIf="recommendation.address">
+            <ion-icon name="location-outline"></ion-icon>
+            <span class="link-text" (click)="openMaps(recommendation.address)"
+              >{{recommendation.address}}</span
+            >
+          </div>
+
+          <div class="detail-item" *ngIf="recommendation.phone">
+            <ion-icon name="call-outline"></ion-icon>
+            <span class="link-text" (click)="makeCall(recommendation.phone)"
+              >{{recommendation.phone}}</span
+            >
+          </div>
+        </div>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

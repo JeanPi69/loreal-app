@@ -7,6 +7,8 @@ import { Card } from 'src/app/models/Dashboard';
 import { SpeakersPage } from './speakers/speakers.page';
 import { AgendaPage } from './agenda/agenda.page';
 import { TourPage } from './tour/tour.page';
+import { RecomendationsPage } from './recomendations/recomendations.page';
+import { MapsPage } from './maps/maps.page';
 
 @Component({
   selector: 'app-dashboard',
@@ -36,6 +38,7 @@ export class DashboardPage implements OnInit {
     {
       img: '../../../assets/dashboard/cards/mapa.png',
       description: 'HOME.MAP',
+      component: MapsPage
     },
     {
       img: '../../../assets/dashboard/cards/media.png',
@@ -65,6 +68,7 @@ export class DashboardPage implements OnInit {
     {
       img: '../../../assets/dashboard/cards/recommendations.png',
       description: 'HOME.RECOMMENDATIONS',
+      component: RecomendationsPage
     },
   ];
 
