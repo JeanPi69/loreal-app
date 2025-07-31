@@ -1,7 +1,7 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { AgendaResponse, ConnectivityResponse, DestiniesResponse, RecommendationsByCategoryResponse, RecommendationsResponse, SpeakersResponse, TourResponse } from 'src/app/models/Dashboard';
+import { AgendaResponse, ConnectivityResponse, DestiniesResponse, RecommendationsByCategoryResponse, RecommendationsResponse, SpeakersResponse, StudiesResponse, TourResponse } from 'src/app/models/Dashboard';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
@@ -41,6 +41,10 @@ export class DashboardService {
 
   getCountryData(): Observable<DestiniesResponse>{
     return this.http.get<DestiniesResponse>(`${this.url}/destinies`);
+  }
+
+  getStudies(): Observable<StudiesResponse>{
+    return this.http.get<StudiesResponse>(`${this.url}/studies`);
   }
 
 }

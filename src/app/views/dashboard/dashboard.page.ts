@@ -10,6 +10,9 @@ import { TourPage } from './tour/tour.page';
 import { RecomendationsPage } from './recomendations/recomendations.page';
 import { MapsPage } from './maps/maps.page';
 import { CountryPage } from './country/country.page';
+import { PhotosPage } from './photos/photos.page';
+import { SocialPage } from './social/social.page';
+import { ScientificPage } from './scientific/scientific.page';
 
 @Component({
   selector: 'app-dashboard',
@@ -44,10 +47,12 @@ export class DashboardPage implements OnInit {
     {
       img: '../../../assets/dashboard/cards/media.png',
       description: 'HOME.MEDIA',
+      component: PhotosPage
     },
     {
       img: '../../../assets/dashboard/cards/social.png',
       description: 'HOME.SOCIAL',
+      component: SocialPage
     },
     {
       img: '../../../assets/dashboard/cards/tour.png',
@@ -61,6 +66,7 @@ export class DashboardPage implements OnInit {
     {
       img: '../../../assets/dashboard/cards/scientific.png',
       description: 'HOME.SCIENTIFIC',
+      component: ScientificPage
     },
     {
       img: '../../../assets/dashboard/cards/peru.png',

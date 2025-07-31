@@ -38,6 +38,18 @@ const routes: Routes = [
   {
     path: 'country',
     loadChildren: () => import('./country/country.module').then( m => m.CountryPageModule)
+  },
+  {
+    path: 'photos',
+    loadChildren: () => import('./photos/photos.module').then( m => m.PhotosPageModule)
+  },
+  {
+    path: 'social',
+    loadChildren: () => import('./social/social.module').then( m => m.SocialPageModule)
+  },
+  {
+    path: 'scientific',
+    loadChildren: () => import('./scientific/scientific.module').then( m => m.ScientificPageModule)
   }
 
 ];

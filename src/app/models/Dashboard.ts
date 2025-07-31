@@ -117,3 +117,16 @@ export interface CountryData{
   id: number;
   description: string;
 }
+
+export interface StudiesResponse {
+  success: boolean;
+  data: {
+    studies: Study[];
+  }
+}
+
+export interface Study{
+  id: number;
+  name: string;
+  url: string;
+}
