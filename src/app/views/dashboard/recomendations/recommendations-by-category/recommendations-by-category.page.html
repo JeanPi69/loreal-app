@@ -5,7 +5,42 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-list>
+  <!-- Skeleton Loader -->
+  <ion-list *ngIf="isLoading">
+    <ion-item
+      lines="none"
+      *ngFor="let item of [1,2,3,4,5]"
+      class="recommendation-item"
+    >
+      <ion-label>
+        <!-- Skeleton para nombre con icono -->
+        <div class="name-row">
+          <div class="skeleton-item skeleton-icon"></div>
+          <div class="skeleton-item skeleton-name"></div>
+        </div>
+
+        <!-- Skeleton para detalles -->
+        <div class="details-column">
+          <div class="detail-item">
+            <div class="skeleton-item skeleton-detail-icon"></div>
+            <div class="skeleton-item skeleton-web"></div>
+          </div>
+
+          <div class="detail-item">
+            <div class="skeleton-item skeleton-detail-icon"></div>
+            <div class="skeleton-item skeleton-address"></div>
+          </div>
+
+          <div class="detail-item">
+            <div class="skeleton-item skeleton-detail-icon"></div>
+            <div class="skeleton-item skeleton-phone"></div>
+          </div>
+        </div>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <ion-list *ngIf="!isLoading">
     <ion-item
       lines="none"
       *ngFor="let recommendation of recommendations"
