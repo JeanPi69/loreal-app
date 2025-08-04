@@ -70,4 +70,8 @@ export class LoginPage implements OnInit {
     }); 
   }
 
+  backToHome(){
+    this.router.navigate(['/home']);
+  }
+
 }

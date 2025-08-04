@@ -8,37 +8,39 @@ import { RecommendationsByCategoryPage } from './recommendations-by-category/rec
   selector: 'app-recomendations',
   templateUrl: './recomendations.page.html',
   styleUrls: ['./recomendations.page.scss'],
-  standalone: false
+  standalone: false,
 })
 export class RecomendationsPage implements OnInit {
-
   categories: RecommendationCategory[] = [];
   isLoading = true;
-  
+
   categoryImages: { [key: string]: string } = {
     '1': 'assets/dashboard/recommendations/agencia-viajes.png',
     '2': 'assets/dashboard/recommendations/casa-cambio.png',
     '3': 'assets/dashboard/recommendations/restaurantes.png',
-    '4': 'assets/dashboard/recommendations/taxis.png'
+    '4': 'assets/dashboard/recommendations/taxis.png',
   };
 
-  constructor(private dashboardService: DashboardService, private modalCtrl: ModalController) { }
+  constructor(
+    private dashboardService: DashboardService,
+    private modalCtrl: ModalController
+  ) {}
 
   ngOnInit() {
     this.getRecommendations();
   }
 
-  getRecommendations(){
+  getRecommendations() {
     this.isLoading = true;
     this.dashboardService.getRecommendations().subscribe({
-      next: res => {
+      next: (res) => {
         console.log('Recommendations:', res);
         this.categories = res.data.recommendations;
         this.isLoading = false;
       },
       error: (error) => {
         console.error('Error fetching recommendations:', error);
-      }
+      },
     });
   }
 
@@ -51,13 +53,15 @@ export class RecomendationsPage implements OnInit {
     const modal = await this.modalCtrl.create({
       component: RecommendationsByCategoryPage,
       componentProps: {
-        category: category
+        category: category,
       },
       initialBreakpoint: 1,
-      breakpoints: [0, 1]
+      breakpoints: [0, 1],
     });
     await modal.present();
   }
 
-
+  modalDismiss() {
+    this.modalCtrl.dismiss();
+  }
 }

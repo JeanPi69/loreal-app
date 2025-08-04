@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Browser } from '@capacitor/browser';
 import { Capacitor } from '@capacitor/core';
-import { LoadingController, ToastController } from '@ionic/angular';
+import { LoadingController, ModalController, ToastController } from '@ionic/angular';
 import { Study } from 'src/app/models/Dashboard';
 import { DashboardService } from 'src/app/services/dashboard/dashboard.service';
 
@@ -16,17 +16,18 @@ export class ScientificPage implements OnInit {
 
   studies: Study[] = [];
 
-  studyImages: {[key:string]: string} = {
+  studyImages: { [key: string]: string } = {
     '1': 'assets/dashboard/studies/cerave.png',
     '2': 'assets/dashboard/studies/laroche.png',
     '3': 'assets/dashboard/studies/skinceuticals.png',
     '4': 'assets/dashboard/studies/vichy.png',
-  }
+  };
 
   constructor(
     private dashboardService: DashboardService,
     private toastController: ToastController,
-    private loadingCtrl: LoadingController
+    private loadingCtrl: LoadingController,
+    private modalCtrl: ModalController
   ) {}
 
   ngOnInit() {
@@ -57,36 +58,34 @@ export class ScientificPage implements OnInit {
       return;
     }
     const loading = await this.loadingCtrl.create({
-      message: 'Abriendo link...'
+      message: 'Abriendo link...',
     });
 
     try {
       await loading.present();
 
       let url = study.url;
-      
+
       // Asegurar protocolo
       if (!url.startsWith('http://') && !url.startsWith('https://')) {
         url = 'https://' + url;
       }
 
       if (Capacitor.isNativePlatform()) {
-        await Browser.open({ 
+        await Browser.open({
           url: url,
-          windowName: '_system'
+          windowName: '_system',
         });
       } else {
         window.open(url, '_blank', 'noopener,noreferrer');
       }
 
       await loading.dismiss();
-      
     } catch (error) {
       await loading.dismiss();
       console.error('Error opening study:', error);
       await this.showToast('Error al abrir el estudio', 'danger');
     }
-
   }
 
   private async showToast(message: string, color: string) {
@@ -97,5 +96,9 @@ export class ScientificPage implements OnInit {
       position: 'bottom',
     });
     toast.present();
+  }
+
+  modalDismiss() {
+    this.modalCtrl.dismiss();
   }
 }

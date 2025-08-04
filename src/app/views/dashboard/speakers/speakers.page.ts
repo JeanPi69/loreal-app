@@ -43,9 +43,13 @@ export class SpeakersPage implements OnInit {
       componentProps: {
         speaker: speaker,
       },
-      breakpoints: [0,1],
+      breakpoints: [0, 1],
       initialBreakpoint: 1,
     });
     await modal.present();
+  }
+
+  modalDismiss() {
+    this.modalCtrl.dismiss();
   }
 }

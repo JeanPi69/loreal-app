@@ -1,12 +1,17 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>{{'SOCIAL.SOCIAL' | translate}}</ion-title>
+    <ion-buttons slot="end">
+      <ion-button fill="clear" (click)="modalDismiss()">
+        <ion-icon slot="icon-only" name="close" color="white"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true" class="ion-padding">
   <!-- Skeleton Loader -->
-  <div *ngIf="isLoading">
+  <!--   <div>
     <div class="day-section">
       <div class="skeleton-item skeleton-title"></div>
       <div class="skeleton-item skeleton-text-line"></div>
@@ -20,10 +25,10 @@
       <div class="skeleton-item skeleton-text-line"></div>
       <div class="skeleton-item skeleton-text-short"></div>
     </div>
-  </div>
+  </div> -->
 
   <!-- Contenido real -->
-  <div *ngIf="!isLoading">
+  <div>
     <div class="day-section">
       <h2 class="section-title">{{'SOCIAL.FRIDAY' | translate}}</h2>
       <div

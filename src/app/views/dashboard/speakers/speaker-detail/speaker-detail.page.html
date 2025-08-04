@@ -2,8 +2,8 @@
   <ion-toolbar>
     <ion-title>{{speaker.name}}</ion-title>
     <ion-buttons slot="end">
-      <ion-button fill="clear" (click)="closeModal()">
-        <ion-icon name="close" color="white"></ion-icon>
+      <ion-button fill="clear" (click)="modalDismiss()">
+        <ion-icon slot="icon-only" name="close" color="white"></ion-icon>
       </ion-button>
     </ion-buttons>
   </ion-toolbar>
@@ -17,5 +17,5 @@
       style="max-width: 100%; height: auto"
     />
   </div>
-  <p class="ion-padding" style="font-size:0.9rem; ">{{speaker.description}}</p>
+  <p class="ion-padding description-text">{{speaker.description}}</p>
 </ion-content>

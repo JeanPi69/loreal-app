@@ -6,6 +6,7 @@ import {
 } from 'src/app/models/Dashboard';
 import { DashboardService } from 'src/app/services/dashboard/dashboard.service';
 import { Browser } from '@capacitor/browser';
+import { ModalController } from '@ionic/angular';
 
 @Component({
   selector: 'app-recommendations-by-category',
@@ -20,7 +21,7 @@ export class RecommendationsByCategoryPage implements OnInit {
 
   recommendations: Recommendation[] = [];
 
-  constructor(private dashboardService: DashboardService) {}
+  constructor(private dashboardService: DashboardService, private modalCtrl: ModalController) {}
 
   ngOnInit() {
     this.getRecommendationsByCategory();
@@ -84,5 +85,9 @@ export class RecommendationsByCategoryPage implements OnInit {
     } catch (error) {
       console.error('Error making call:', error);
     }
+  }
+
+  modalDismiss() {
+    this.modalCtrl.dismiss();
   }
 }

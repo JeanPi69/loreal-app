@@ -1,6 +1,11 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>{{ 'HOME.CONNECTIVITY' | translate }}</ion-title>
+    <ion-buttons slot="end">
+      <ion-button fill="clear" (click)="modalDismiss()">
+        <ion-icon slot="icon-only" name="close" color="white"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 

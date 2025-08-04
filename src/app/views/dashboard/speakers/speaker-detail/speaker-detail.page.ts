@@ -6,19 +6,16 @@ import { Speaker } from 'src/app/models/Dashboard';
   selector: 'app-speaker-detail',
   templateUrl: './speaker-detail.page.html',
   styleUrls: ['./speaker-detail.page.scss'],
-  standalone: false
+  standalone: false,
 })
 export class SpeakerDetailPage implements OnInit {
-
   @Input() speaker!: Speaker;
 
-  constructor(private modalCtrl: ModalController) { }
+  constructor(private modalCtrl: ModalController) {}
 
-  ngOnInit() {
+  ngOnInit() {}
+
+  modalDismiss() {
+    this.modalCtrl.dismiss();
   }
-
-  async closeModal(){
-    await this.modalCtrl.dismiss();
-  }
-
 }

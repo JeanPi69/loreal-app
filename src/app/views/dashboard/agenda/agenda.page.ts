@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { DashboardService } from '../../../services/dashboard/dashboard.service';
 import { AgendaItem } from '../../../models/Dashboard';
 import { TranslateService } from '@ngx-translate/core';
+import { ModalController } from '@ionic/angular';
 
 @Component({
   selector: 'app-agenda',
@@ -15,7 +16,7 @@ export class AgendaPage implements OnInit {
 
   isLoading = true;
 
-  constructor(private dashboardService: DashboardService, private translate: TranslateService) {}
+  constructor(private dashboardService: DashboardService, private translate: TranslateService, private modalCtrl: ModalController) {}
 
   ngOnInit() {
     this.getData();
@@ -41,4 +42,9 @@ export class AgendaPage implements OnInit {
       return this.translate.instant('AGENDA.SATURDAY') + ' 23';
     }
   }
+
+  modalDismiss(){
+    this.modalCtrl.dismiss();
+  }
+
 }

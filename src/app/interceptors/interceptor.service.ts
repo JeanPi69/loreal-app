@@ -8,13 +8,23 @@ import {
 } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
+import {
+  LoadingController,
+  ModalController,
+  ToastController,
+} from '@ionic/angular';
 import { Observable, tap } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class InterceptorService implements HttpInterceptor {
-  constructor(private router: Router) {}
+  constructor(
+    private router: Router,
+    private modalCtrl: ModalController,
+    private loadingCtrl: LoadingController,
+    private toastCtrl: ToastController
+  ) {}
 
   intercept(
     request: HttpRequest<any>,
@@ -28,9 +38,9 @@ export class InterceptorService implements HttpInterceptor {
         setHeaders: {
           Authorization: `Bearer ${token}`,
         },
-        setParams:{
-          language: language
-        }
+        setParams: {
+          language: language,
+        },
       });
     }
 
@@ -40,17 +50,67 @@ export class InterceptorService implements HttpInterceptor {
           if (event instanceof HttpResponse) {
           }
         },
-        (error: any) => {
+        async (error: any) => {
           if (error instanceof HttpErrorResponse) {
             if (error.status !== 401 && error.status !== 403) {
               return;
             }
-            localStorage.removeItem('token');
-            localStorage.removeItem('user');
+
+            await this.closeAllOverlays();
+
+            this.clearUserData();
+
+            await this.showSessionExpiredMessage();
+
             this.router.navigate(['/login']);
           }
         }
       )
     );
+  }
+
+  private async closeAllOverlays() {
+    try {
+      while (await this.modalCtrl.getTop()) {
+        await this.modalCtrl.dismiss();
+      }
+
+      while (await this.loadingCtrl.getTop()) {
+        await this.loadingCtrl.dismiss();
+      }
+
+      while (await this.toastCtrl.getTop()) {
+        await this.toastCtrl.dismiss();
+      }
+    } catch (error) {
+      console.error('Error closing overlays:', error);
+    }
+  }
+
+  private clearUserData() {
+    localStorage.removeItem('token');
+    localStorage.removeItem('user');
+    sessionStorage.clear();
+  }
+
+  private async showSessionExpiredMessage() {
+    try {
+      const toast = await this.toastCtrl.create({
+        message: 'Tu sesión ha expirado. Por favor, inicia sesión nuevamente.',
+        duration: 4000,
+        position: 'top',
+        color: 'warning',
+        buttons: [
+          {
+            text: 'OK',
+            role: 'cancel',
+          },
+        ],
+      });
+
+      await toast.present();
+    } catch (error) {
+      console.error('Error showing session expired message:', error);
+    }
   }
 }

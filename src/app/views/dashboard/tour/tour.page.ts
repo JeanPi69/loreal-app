@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ModalController } from '@ionic/angular';
 import { Tour } from 'src/app/models/Dashboard';
 import { DashboardService } from 'src/app/services/dashboard/dashboard.service';
 
@@ -6,20 +7,19 @@ import { DashboardService } from 'src/app/services/dashboard/dashboard.service';
   selector: 'app-tour',
   templateUrl: './tour.page.html',
   styleUrls: ['./tour.page.scss'],
-  standalone: false
+  standalone: false,
 })
 export class TourPage implements OnInit {
-
   tour!: Tour;
   isLoading = true;
 
-  constructor(private dashboardService: DashboardService) { }
+  constructor(private dashboardService: DashboardService, private modalCtrl: ModalController) {}
 
   ngOnInit() {
     this.getTours();
   }
 
-  getTours(){
+  getTours() {
     this.isLoading = true;
     this.dashboardService.getTour().subscribe({
       next: (response) => {
@@ -35,8 +35,11 @@ export class TourPage implements OnInit {
       error: (error) => {
         console.error('Error fetching tour data:', error);
         this.isLoading = false;
-      }
+      },
     });
   }
 
+  modalDismiss() {
+    this.modalCtrl.dismiss();
+  }
 }

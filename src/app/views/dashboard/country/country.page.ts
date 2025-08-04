@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ModalController } from '@ionic/angular';
 import { CountryData } from 'src/app/models/Dashboard';
 import { DashboardService } from 'src/app/services/dashboard/dashboard.service';
 
@@ -12,7 +13,7 @@ export class CountryPage implements OnInit {
   country!: CountryData;
   isLoading = true;
 
-  constructor(private dashboardService: DashboardService) {}
+  constructor(private dashboardService: DashboardService, private modalCtrl: ModalController) {}
 
   ngOnInit() {
     this.getCountryData();
@@ -31,5 +32,9 @@ export class CountryPage implements OnInit {
       },
     });
   }
+
+  modalDismiss() {
+    this.modalCtrl.dismiss();
+  } 
 
 }

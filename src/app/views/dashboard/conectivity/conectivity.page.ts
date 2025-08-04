@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ModalController } from '@ionic/angular';
 import { TranslateService } from '@ngx-translate/core';
 import { Connectivity } from 'src/app/models/Dashboard';
 import { DashboardService } from 'src/app/services/dashboard/dashboard.service';
@@ -14,7 +15,7 @@ export class ConectivityPage implements OnInit {
   isLoading = true;
   connectivities: Connectivity[] = []
 
-  constructor(private translate: TranslateService, private dashboardService: DashboardService) { }
+  constructor(private translate: TranslateService, private dashboardService: DashboardService, private modalCtrl: ModalController) { }
 
   ngOnInit() {
     this.getData();
@@ -33,6 +34,10 @@ export class ConectivityPage implements OnInit {
         this.isLoading = false;
       }
     });
+  }
+
+  modalDismiss(){
+    this.modalCtrl.dismiss();
   }
 
 }

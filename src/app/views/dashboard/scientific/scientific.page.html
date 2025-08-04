@@ -1,6 +1,11 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>{{'HOME.SCIENTIFIC' | translate}}</ion-title>
+    <ion-buttons slot="end">
+      <ion-button fill="clear" (click)="modalDismiss()">
+        <ion-icon slot="icon-only" name="close" color="white"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
@@ -26,9 +31,9 @@
         <ion-card (click)="downloadStudy(study)">
           <ion-card-content class="card-content">
             <ion-img
-            [src]="getStudyImage(study.id)"
-            [alt]="study.name"
-            class="study-image"
+              [src]="getStudyImage(study.id)"
+              [alt]="study.name"
+              class="study-image"
             >
             </ion-img>
             <ion-icon name="download-outline" size="large"></ion-icon>
