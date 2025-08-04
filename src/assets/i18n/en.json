@@ -88,7 +88,14 @@
     "NEW_PASSWORD": "NEW PASSWORD",
     "CONFIRM_PASSWORD": "CONFIRM NEW PASSWORD",
     "SEND_BUTTON": "SEND",
-    "CHANGE_PASSWORD": "CHANGE PASSWORD"
+    "CHANGE_PASSWORD": "CHANGE PASSWORD",
+    "ERROR": {
+      "PASSWORDS_MATCH": "Passwords do not match",
+      "OLD_REQUIRED": "Old password is required",
+      "NEW_REQUIRED": "New password is required",
+      "MIN_LENGTH": "New password must be at least 6 characters long",
+      "CONFIRM_REQUIRED": "Confirmation of the new password is required"
+    }
   },
   "TRIPS": {
     "AIRLINE": "AIRLINE",

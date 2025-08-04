@@ -88,7 +88,14 @@
     "NEW_PASSWORD": "NUEVA CONTRASEÑA",
     "CONFIRM_PASSWORD": "CONFIRMAR NUEVA CONTRASEÑA",
     "SEND_BUTTON": "ENVIAR",
-    "CHANGE_PASSWORD": "CAMBIAR CONTRASEÑA"
+    "CHANGE_PASSWORD": "CAMBIAR CONTRASEÑA",
+    "ERROR": {
+      "PASSWORDS_MATCH": "Las contraseñas no coinciden",
+      "OLD_REQUIRED": "La contraseña anterior es obligatoria",
+      "NEW_REQUIRED": "La nueva contraseña es obligatoria",
+      "MIN_LENGTH": "La nueva contraseña debe tener al menos 6 caracteres",
+      "CONFIRM_REQUIRED": "La confirmación de la nueva contraseña es obligatoria"
+    }
   },
   "TRIPS": {
     "AIRLINE": "AEROLÍNEA",

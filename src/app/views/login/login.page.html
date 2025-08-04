@@ -4,13 +4,13 @@
     src="../../../assets/login/texto/logo.png"
     alt="Loreal Logo"
   />
-  <div class="login-container">
+  <div class="login-container" >
     <img
       class="main-text"
       src="../../../assets/login/texto/main-text.png"
       alt="Main Text"
     />
-    <div class="form-container">
+    <div class="form-container" *ngIf="!forgetPassword">
       <form [formGroup]="loginForm" (ngSubmit)="login()">
         <ion-input
           type="email"
@@ -38,11 +38,30 @@
           <ion-button class="login-btn" expand="block" (click)="backToHome()">
             {{'AUTH.LOGIN.BACK' | translate}}
           </ion-button>
-          <ion-nav-link class="label-forget-password"
+          <ion-nav-link
+            class="label-forget-password"
+            (click)="forgetPassword = true"
             >{{'AUTH.LOGIN.FORGOT_PASSWORD' | translate}}</ion-nav-link
           >
         </div>
       </form>
     </div>
+    <div class="form-container" *ngIf="forgetPassword">
+      <ion-input fill="outline" labelPlacement="floating" [label]="'AUTH.LOGIN.EMAIL' | translate"></ion-input>
+      <div class="btn-container">
+        <ion-button class="login-btn" expand="block">
+          {{'AUTH.RECOVER_PASSWORD.RECOVER' | translate}}
+        </ion-button>
+        <ion-button
+          class="login-btn"
+          expand="block"
+          (click)="forgetPassword = false"
+        >
+          {{'AUTH.LOGIN.BACK' | translate}}
+        </ion-button>
+      </div>
+    </div>
   </div>
+
+
 </ion-content>

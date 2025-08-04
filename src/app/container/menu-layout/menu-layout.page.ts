@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { LoadingController, PopoverController } from '@ionic/angular';
+import { LoadingController, ModalController, PopoverController } from '@ionic/angular';
 import { TranslateService } from '@ngx-translate/core';
 import { AuthService } from 'src/app/services/auth/auth.service';
+import { ChangePasswordPage } from 'src/app/views/dashboard/change-password/change-password.page';
 
 @Component({
   selector: 'app-menu-layout',
@@ -16,7 +17,8 @@ export class MenuLayoutPage implements OnInit {
     private authService: AuthService,
     private router: Router,
     private popOverCtrl: PopoverController,
-    private loadingCtrl: LoadingController
+    private loadingCtrl: LoadingController,
+    private modalCtrl: ModalController
   ) {}
 
   ngOnInit() {}
@@ -46,4 +48,15 @@ export class MenuLayoutPage implements OnInit {
       }
     });
   }
+
+  async openChangePasswordModal(){
+    await this.popOverCtrl.dismiss();
+    const modal = await this.modalCtrl.create({
+      component: ChangePasswordPage,
+      initialBreakpoint: 1,
+      breakpoints: [1],
+    });
+    await modal.present();
+  }
+
 }

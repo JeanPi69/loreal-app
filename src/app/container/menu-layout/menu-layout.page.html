@@ -33,7 +33,7 @@
         <ng-template>
           <ion-content class="not-background-content">
             <ion-list>
-              <ion-item>
+              <ion-item (click)="openChangePasswordModal()">
                 <ion-icon name="lock-closed-outline"></ion-icon>
                 <ion-label
                   >{{'CHANGE_PASSWORD.CHANGE_PASSWORD' | translate}}</ion-label

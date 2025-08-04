@@ -15,6 +15,8 @@ export class LoginPage implements OnInit {
 
   loginForm: FormGroup;
 
+  forgetPassword = false;
+
   constructor(private authService: AuthService, private fb: FormBuilder, private router: Router, private loadingCtrl: LoadingController, private alertCtrl: AlertController,private translate: TranslateService) { 
     this.loginForm = this.fb.group({
       email: ['giancarlo.paoli@billex.pe', [Validators.required, Validators.email]],
