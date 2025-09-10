@@ -10,7 +10,20 @@ const config: CapacitorConfig = {
       resize: KeyboardResize.None,
       resizeOnFullScreen: false,
       style: KeyboardStyle.Dark
-    }
+    },
+    SplashScreen: {
+      launchShowDuration: 0,
+      launchAutoHide: true,
+      androidSplashResourceName: 'splash',
+      androidScaleType: 'CENTER',
+      showSpinner: false,
+      androidSpinnerStyle: 'large',
+      iosSpinnerStyle: 'small',
+      splashFullScreen: true,
+      splashImmersive: true,
+      layoutName: 'launch_screen',
+      useDialog: false,
+    },
   }
 };
 
