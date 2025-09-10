@@ -1,47 +1,10 @@
-<!-- <ion-content>
-  <div class="helper-div"></div>
-  <div class="login-form-container">
-    <div class="login-form">
-      <form [formGroup]="loginForm" (ngSubmit)="login()">
-        <ion-item class="login-input">
-          <ion-input
-            [label]="'AUTH.LOGIN.EMAIL' | translate"
-            labelPlacement="floating"
-            type="email"
-            formControlName="email"
-          ></ion-input>
-        </ion-item>
-
-        <ion-item class="login-input">
-          <ion-input
-            [label]="'AUTH.LOGIN.PASSWORD' | translate"
-            labelPlacement="floating"
-            type="password"
-            formControlName="password"
-          ></ion-input>
-        </ion-item>
-
-        <ion-button expand="block" class="login-button" type="submit">
-          {{'AUTH.LOGIN.LOGIN' | translate}}
-        </ion-button>
-        <div style="text-align: center;">
-          <img src="./assets/login/img/i_spain.png" alt="BANDERA ESPAÑA">
-          <img src="./assets/login/img/i_usa.png" alt="BANDERA USA">
-        </div>
-      </form>
-    </div>
-  </div>
-</ion-content> -->
-
-<ion-content>
+<ion-content [scrollY]="true">
   <!-- Fondo fijo como elemento separado -->
   <div class="background-container"></div>
-  
+
   <!-- Contenido del formulario -->
   <div class="content-container">
-    <div class="helper-div">
-
-    </div>
+    <div class="helper-div"></div>
     <div class="login-form-container">
       <div class="login-form">
         <form [formGroup]="loginForm" (ngSubmit)="login()">
@@ -67,8 +30,8 @@
             {{'AUTH.LOGIN.LOGIN' | translate}}
           </ion-button>
           <div class="flags-container">
-            <img src="./assets/login/img/i_spain.png" alt="BANDERA ESPAÑA">
-            <img src="./assets/login/img/i_usa.png" alt="BANDERA USA">
+            <img src="./assets/login/img/i_spain.png" alt="BANDERA ESPAÑA" />
+            <img src="./assets/login/img/i_usa.png" alt="BANDERA USA" />
           </div>
         </form>
       </div>

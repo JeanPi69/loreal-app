@@ -131,3 +131,13 @@ app-menu-layout ion-router-outlet ion-content {
     background-position: 200% 0;
   }
 }
+
+body.keyboard-is-open.ios {
+  .content-container {
+    overflow-y: auto !important;
+  }
+  
+  ion-content {
+    --keyboard-offset: 0px !important;
+  }
+}

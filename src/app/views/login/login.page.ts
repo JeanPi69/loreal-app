@@ -46,6 +46,22 @@ export class LoginPage implements OnInit {
         await Keyboard.setResizeMode({ mode: KeyboardResize.None });
         await Keyboard.setScroll({ isDisabled: true });
         
+        if (this.platform.is('ios')) {
+          Keyboard.addListener('keyboardWillShow', (info) => {
+            document.body.classList.add('keyboard-is-open');
+            // Hacer scroll hacia el input activo después de un breve retraso
+            setTimeout(() => {
+              const activeElement = document.activeElement as HTMLElement;
+              if (activeElement) {
+                activeElement.scrollIntoView({ 
+                  behavior: 'smooth', 
+                  block: 'center' 
+                });
+              }
+            }, 150);
+          });
+        }
+
         Keyboard.addListener('keyboardWillShow', () => {
           document.body.classList.add('keyboard-is-open');
         });
