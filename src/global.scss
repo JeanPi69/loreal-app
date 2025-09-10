@@ -41,8 +41,32 @@
   outline: 1px solid rgba(0, 0, 0, 0.2);
 } */
 
-ion-content{
-  --background: url("./assets/login/img/background_complete.png") 0 0/100% 100% no-repeat;
+/* ion-content{
+  --background: url("./assets/login/img/FONDO.png") 0 0/100% 100% no-repeat;
+} */
+
+body, ion-app, ion-content {
+  --background: none;
+  background-image: url("./assets/login/img/FONDO.png");
+  background-position: center center;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  min-height: 100vh;
+  height: auto !important;
+}
+
+ion-content::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("./assets/login/img/FONDO.png");
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
 }
 
 .not-background-content{

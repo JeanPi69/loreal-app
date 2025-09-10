@@ -23,50 +23,21 @@ import { ScientificPage } from './scientific/scientific.page';
 export class DashboardPage implements OnInit {
   user!: User;
 
+  showAllCards = false;
   cards: Card[] = [
     {
-      img: '../../../assets/dashboard/cards/agenda.png',
-      description: 'HOME.DIARY',
-      component: AgendaPage
+      img: '../../../assets/dashboard/cards/icono-viaje.png', 
+      description: ''
     },
     {
-      img: '../../../assets/dashboard/cards/connectivity.png',
-      description: 'HOME.CONNECTIVITY',
-      component: ConectivityPage,
+      img: '../../../assets/dashboard/cards/icono-agenda.png',
+      description: '',
+      component: AgendaPage
     },
     {
       img: '../../../assets/dashboard/cards/expositores.png',
       description: 'HOME.EXHIBITORS',
       component: SpeakersPage
-    },
-    {
-      img: '../../../assets/dashboard/cards/mapa.png',
-      description: 'HOME.MAP',
-      component: MapsPage
-    },
-    {
-      img: '../../../assets/dashboard/cards/media.png',
-      description: 'HOME.MEDIA',
-      component: PhotosPage
-    },
-    {
-      img: '../../../assets/dashboard/cards/social.png',
-      description: 'HOME.SOCIAL',
-      component: SocialPage
-    },
-    {
-      img: '../../../assets/dashboard/cards/tour.png',
-      description: 'HOME.TOUR',
-      component: TourPage
-    },
-    {
-      img: '../../../assets/dashboard/cards/trivia.png',
-      description: 'HOME.TRIVIA',
-    },
-    {
-      img: '../../../assets/dashboard/cards/scientific.png',
-      description: 'HOME.SCIENTIFIC',
-      component: ScientificPage
     },
     {
       img: '../../../assets/dashboard/cards/peru.png',
@@ -78,6 +49,25 @@ export class DashboardPage implements OnInit {
       description: 'HOME.RECOMMENDATIONS',
       component: RecomendationsPage
     },
+    {
+      img: '../../../assets/dashboard/cards/mapa.png',
+      description: 'HOME.MAP',
+      component: MapsPage
+    },
+    {
+      img: '../../../assets/dashboard/cards/connectivity.png',
+      description: 'HOME.CONNECTIVITY',
+      component: ConectivityPage,
+    },
+    {
+      img: '../../../assets/dashboard/cards/media.png',
+      description: 'HOME.MEDIA',
+      component: PhotosPage
+    },
+    {
+      img: '../../../assets/dashboard/cards/trivia.png',
+      description: 'HOME.TRIVIA',
+    }
   ];
 
   constructor(
@@ -101,4 +91,9 @@ export class DashboardPage implements OnInit {
     });
     await modal.present();
   }
+
+  toggleShowAllCards() {
+    this.showAllCards = !this.showAllCards;
+  }
+
 }

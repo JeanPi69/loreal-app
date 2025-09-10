@@ -45,3 +45,29 @@
   margin-top: 8px;
   font-weight: bold;
 }
+
+
+.show-more-container {
+  display: flex;
+  justify-content: center;
+  margin: 10px 0 20px 0;
+  width: 100%;
+}
+
+.show-more-btn {
+  --color: var(--ion-color-primary);
+  font-weight: 500;
+  
+  ion-icon {
+    margin-left: 5px;
+  }
+}
+
+.dashboard-card {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}

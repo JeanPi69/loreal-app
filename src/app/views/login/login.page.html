@@ -1,67 +1,77 @@
-<ion-content [fullscreen]="true">
-  <img
-    class="logo-img"
-    src="../../../assets/login/texto/logo.png"
-    alt="Loreal Logo"
-  />
-  <div class="login-container" >
-    <img
-      class="main-text"
-      src="../../../assets/login/texto/main-text.png"
-      alt="Main Text"
-    />
-    <div class="form-container" *ngIf="!forgetPassword">
+<!-- <ion-content>
+  <div class="helper-div"></div>
+  <div class="login-form-container">
+    <div class="login-form">
       <form [formGroup]="loginForm" (ngSubmit)="login()">
-        <ion-input
-          type="email"
-          [label]="'AUTH.LOGIN.EMAIL' | translate"
-          labelPlacement="floating"
-          [placeholder]="'AUTH.LOGIN.EMAIL' | translate"
-          fill="outline"
-          email
-          errorText="Email inválido"
-          formControlName="email"
-        ></ion-input>
-        <ion-input
-          type="password"
-          [label]="'AUTH.LOGIN.PASSWORD' | translate"
-          labelPlacement="floating"
-          [placeholder]="'AUTH.LOGIN.PASSWORD' | translate"
-          errorText="Ingrese una contraseña válida"
-          fill="outline"
-          formControlName="password"
-        ></ion-input>
-        <div class="btn-container">
-          <ion-button class="login-btn" expand="block" type="submit">
-            {{'AUTH.LOGIN.LOGIN' | translate}}
-          </ion-button>
-          <ion-button class="login-btn" expand="block" (click)="backToHome()">
-            {{'AUTH.LOGIN.BACK' | translate}}
-          </ion-button>
-          <ion-nav-link
-            class="label-forget-password"
-            (click)="forgetPassword = true"
-            >{{'AUTH.LOGIN.FORGOT_PASSWORD' | translate}}</ion-nav-link
-          >
+        <ion-item class="login-input">
+          <ion-input
+            [label]="'AUTH.LOGIN.EMAIL' | translate"
+            labelPlacement="floating"
+            type="email"
+            formControlName="email"
+          ></ion-input>
+        </ion-item>
+
+        <ion-item class="login-input">
+          <ion-input
+            [label]="'AUTH.LOGIN.PASSWORD' | translate"
+            labelPlacement="floating"
+            type="password"
+            formControlName="password"
+          ></ion-input>
+        </ion-item>
+
+        <ion-button expand="block" class="login-button" type="submit">
+          {{'AUTH.LOGIN.LOGIN' | translate}}
+        </ion-button>
+        <div style="text-align: center;">
+          <img src="./assets/login/img/i_spain.png" alt="BANDERA ESPAÑA">
+          <img src="./assets/login/img/i_usa.png" alt="BANDERA USA">
         </div>
       </form>
     </div>
-    <div class="form-container" *ngIf="forgetPassword">
-      <ion-input fill="outline" labelPlacement="floating" [label]="'AUTH.LOGIN.EMAIL' | translate"></ion-input>
-      <div class="btn-container">
-        <ion-button class="login-btn" expand="block">
-          {{'AUTH.RECOVER_PASSWORD.RECOVER' | translate}}
-        </ion-button>
-        <ion-button
-          class="login-btn"
-          expand="block"
-          (click)="forgetPassword = false"
-        >
-          {{'AUTH.LOGIN.BACK' | translate}}
-        </ion-button>
+  </div>
+</ion-content> -->
+
+<ion-content>
+  <!-- Fondo fijo como elemento separado -->
+  <div class="background-container"></div>
+  
+  <!-- Contenido del formulario -->
+  <div class="content-container">
+    <div class="helper-div">
+
+    </div>
+    <div class="login-form-container">
+      <div class="login-form">
+        <form [formGroup]="loginForm" (ngSubmit)="login()">
+          <ion-item class="login-input">
+            <ion-input
+              [label]="'AUTH.LOGIN.EMAIL' | translate"
+              labelPlacement="floating"
+              type="email"
+              formControlName="email"
+            ></ion-input>
+          </ion-item>
+
+          <ion-item class="login-input">
+            <ion-input
+              [label]="'AUTH.LOGIN.PASSWORD' | translate"
+              labelPlacement="floating"
+              type="password"
+              formControlName="password"
+            ></ion-input>
+          </ion-item>
+
+          <ion-button expand="block" class="login-button" type="submit">
+            {{'AUTH.LOGIN.LOGIN' | translate}}
+          </ion-button>
+          <div class="flags-container">
+            <img src="./assets/login/img/i_spain.png" alt="BANDERA ESPAÑA">
+            <img src="./assets/login/img/i_usa.png" alt="BANDERA USA">
+          </div>
+        </form>
       </div>
     </div>
   </div>
-
-
 </ion-content>
