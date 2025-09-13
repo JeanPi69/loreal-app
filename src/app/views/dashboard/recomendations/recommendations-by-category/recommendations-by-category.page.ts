@@ -33,7 +33,6 @@ export class RecommendationsByCategoryPage implements OnInit {
       .getRecommendationsByCategory(this.category.id)
       .subscribe({
         next: (res) => {
-          console.log('Recommendations by category:', res);
           this.recommendations = res.data.recommendations;
           this.isLoading = false;
         },

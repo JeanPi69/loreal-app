@@ -23,7 +23,6 @@ export class ConectivityPage implements OnInit {
 
   getData(){
     this.isLoading = true;
-    console.log('getData start - isLoading:', this.isLoading)
     this.dashboardService.getConnectivity().subscribe({
       next: (response) => {
         this.connectivities = response.data.connectivity;

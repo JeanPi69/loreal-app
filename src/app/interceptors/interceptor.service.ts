@@ -24,21 +24,13 @@ export class InterceptorService implements HttpInterceptor {
     private router: Router,
     private modalCtrl: ModalController,
     private loadingCtrl: LoadingController,
-    private toastCtrl: ToastController,
-    private platform: Platform
+    private toastCtrl: ToastController
   ) {}
 
   intercept(
     request: HttpRequest<any>,
     next: HttpHandler
   ): Observable<HttpEvent<any>> {
-
-    console.log('INTERCEPTOR - PETICIÓN ENTRANTE:', {
-      url: request.url,
-      method: request.method,
-      body: request.body,
-      platforms: this.platform.platforms() // Ver qué plataforma hace la petición
-    });
 
     const token = localStorage.getItem('token');
     const language = localStorage.getItem('lang') || 'es';
@@ -60,42 +52,14 @@ export class InterceptorService implements HttpInterceptor {
       },
     });
 
-    console.log('INTERCEPTOR - HEADERS CONFIGURADOS:', {
-      headers: request.headers.keys().map(key => `${key}: ${request.headers.get(key)}`),
-      params: request.params.keys().map(key => `${key}: ${request.params.get(key)}`)
-    });
-
     return next.handle(request).pipe(
       tap(
         (event: HttpEvent<any>) => {
           if (event instanceof HttpResponse) {
-            console.log('INTERCEPTOR - RESPUESTA OK:', {
-              url: event.url,
-              status: event.status,
-              statusText: event.statusText,
-              body: event.body
-            });
           }
         },
         async (error: any) => {
-          // LOG #4: Errores detallados
-          console.error('INTERCEPTOR - ERROR:', {
-            error,
-            url: request.url,
-            status: error?.status,
-            message: error?.message,
-            error_details: error?.error,
-            platforms: this.platform.platforms()
-          });
           if (error instanceof HttpErrorResponse) {
-            if (error.status === 419) {
-              console.error('INTERCEPTOR - ERROR 419 (CSRF/EXPIRED):', {
-                headers_sent: request.headers.keys(),
-                response_headers: error.headers?.keys(),
-                url: request.url,
-                platforms: this.platform.platforms()
-              });
-            }
             if (error.status !== 401 && error.status !== 403) {
               return;
             }

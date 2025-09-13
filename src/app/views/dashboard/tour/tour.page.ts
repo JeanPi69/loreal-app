@@ -23,7 +23,6 @@ export class TourPage implements OnInit {
     this.isLoading = true;
     this.dashboardService.getTour().subscribe({
       next: (response) => {
-        console.log('Tour data:', response);
         if (response.success) {
           this.tour = response.data.tours;
           this.isLoading = false;

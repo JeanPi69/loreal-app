@@ -32,7 +32,6 @@ export class RecomendationsPage implements OnInit {
     this.isLoading = true;
     this.dashboardService.getRecommendations().subscribe({
       next: (res) => {
-        console.log('Recommendations:', res);
         this.categories = res.data.recommendations;
         this.isLoading = false;
       },
@@ -47,7 +46,6 @@ export class RecomendationsPage implements OnInit {
   }
 
   async openRecommendationByCategory(category: RecommendationCategory) {
-    console.log('Opening recommendations for category:', category);
     const modal = await this.modalCtrl.create({
       component: RecommendationsByCategoryPage,
       componentProps: {

@@ -12,6 +12,8 @@ export class TravelPage implements OnInit {
 
   user: any = JSON.parse(localStorage.getItem('user') || '{}');
 
+  tripData: any;
+
   constructor(private modalCtrl: ModalController, private dashboardService: DashboardService) {}
 
   ngOnInit() {
@@ -21,6 +23,7 @@ export class TravelPage implements OnInit {
   getTripData(){
     this.dashboardService.getTripData(this.user.id).subscribe(res=>{
       console.log('res', res);
+      this.tripData = res.data.trips[0];
     });
   }
 

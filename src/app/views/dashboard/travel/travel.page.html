@@ -29,29 +29,113 @@
 
       <!-- Contenido scrolleable -->
       <div class="scrollable-content">
-        <p>Contenido scrolleable...</p>
-        <p>Más contenido para hacer scroll...</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        <p>
-          Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        </p>
-        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
-        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse.</p>
-        <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        <p>
-          Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        </p>
-        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
-        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse.</p>
-        <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        <p>
-          Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        </p>
-        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
-        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse.</p>
-        <p>Final del contenido scrolleable</p>
+        <div class="flight-section">
+          <p class="section-title">VUELO DE LLEGADA</p>
+          <hr class="section-divider" />
+
+          <!-- 5 filas con 2 columnas cada una -->
+          <div class="flight-info-grid">
+            <div class="info-row">
+              <div class="info-column">
+                <span class="label">Aerolínea:</span>
+              </div>
+              <div class="info-column">
+                <span class="value">{{tripData.airline}}</span>
+              </div>
+            </div>
+
+            <div class="info-row">
+              <div class="info-column">
+                <span class="label">Fecha:</span>
+              </div>
+              <div class="info-column">
+                <span class="value">{{tripData.arrival_time | date: 'dd.MM.yy'}}</span>
+              </div>
+            </div>
+            
+            <div class="info-row">
+              <div class="info-column">
+                <span class="label">Hora de llegada:</span>
+              </div>
+              <div class="info-column">
+                <span class="value">{{tripData.arrival_time | date: 'dd.MM.yy'}}</span>
+              </div>
+            </div>
+
+            <div class="info-row">
+              <div class="info-column">
+                <span class="label">Número de vuelo:</span>
+              </div>
+              <div class="info-column">
+                <span class="value">{{tripData.flying_number}}</span>
+              </div>
+            </div>
+
+            <div class="info-row">
+              <div class="info-column">
+                <span class="label">Chofer que lo recoge:</span>
+              </div>
+              <div class="info-column">
+                <span class="value">{{tripData.driver}}</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="flight-section">
+          <p class="section-title">VUELO DE RETORNO</p>
+          <hr class="section-divider" />
+
+          <!-- 5 filas con 2 columnas cada una -->
+          <div class="flight-info-grid">
+            <div class="info-row">
+              <div class="info-column">
+                <span class="label">Aerolínea:</span>
+              </div>
+              <div class="info-column">
+                <span class="value">{{tripData.airline}}</span>
+              </div>
+            </div>
+
+            <div class="info-row">
+              <div class="info-column">
+                <span class="label">Fecha:</span>
+              </div>
+              <div class="info-column">
+                <span class="value">{{tripData.departure_time | date: 'dd.MM.yy'}}</span>
+              </div>
+            </div>
+            
+            <div class="info-row">
+              <div class="info-column">
+                <span class="label">Hora de llegada:</span>
+              </div>
+              <div class="info-column">
+                <span class="value">{{tripData.departure_time | date: 'dd.MM.yy'}}</span>
+              </div>
+            </div>
+
+            <div class="info-row">
+              <div class="info-column">
+                <span class="label">Número de vuelo:</span>
+              </div>
+              <div class="info-column">
+                <span class="value">{{tripData.flying_number}}</span>
+              </div>
+            </div>
+
+            <div class="info-row">
+              <div class="info-column">
+                <span class="label">Chofer que lo recoge:</span>
+              </div>
+              <div class="info-column">
+                <span class="value">{{tripData.driver}}</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
       </div>
     </div>
 

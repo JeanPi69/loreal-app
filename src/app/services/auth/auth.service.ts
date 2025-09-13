@@ -17,8 +17,6 @@ export class AuthService {
       'X-Requested-With': 'XMLHttpRequest',
       Accept: 'application/json',
     });
-    console.log('Intentando loguear');
-    console.log('URL:', `${this.url}/login`);
     return this.http.post<LoginResponse>(
       `${this.url}/login`,
       { email, password },
