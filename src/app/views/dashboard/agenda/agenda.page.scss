@@ -137,18 +137,20 @@ ion-icon {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  width: 50px;
-  height: 50px;
+  width: 56px;
+  height: 56px;
   border-radius: 50%;
   background-color: #25d366;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
-  z-index: 100;
+  box-shadow: 0 4px 16px rgba(37, 211, 102, 0.3);
+  z-index: 1000;
+  transition: all 0.3s ease;
 
   ion-icon {
-    font-size: 30px;
+    font-size: 32px;
     color: white;
   }
+
 }

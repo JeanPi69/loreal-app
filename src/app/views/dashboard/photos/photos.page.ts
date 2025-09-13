@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ModalController } from '@ionic/angular';
 
 @Component({
   selector: 'app-photos',
@@ -8,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PhotosPage implements OnInit {
 
-  constructor() { }
+  constructor(private modalCtrl: ModalController) { }
 
   ngOnInit() {
+  }
+
+  modalDismiss() {
+    this.modalCtrl.dismiss();
   }
 
 }

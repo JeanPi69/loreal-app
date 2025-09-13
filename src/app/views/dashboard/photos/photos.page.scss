@@ -1,0 +1,257 @@
+ion-content {
+  font-family: "Arial", sans-serif;
+}
+
+.app-menu-layout {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  overflow: hidden;
+}
+
+.menu-header {
+  display: flex;
+  padding-top: 15px;
+  padding-right: 10px;
+  justify-content: flex-end;
+}
+
+ion-icon {
+  font-size: 24px;
+}
+
+.icon-circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid white;
+  background: transparent;
+}
+
+.header-section {
+  height: 170px;
+  min-height: 170px;
+  max-height: 170px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  z-index: 10;
+  position: relative;
+}
+
+.content-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  overflow: hidden;
+  position: relative;
+  border-radius: 50px;
+  padding: 0;
+}
+
+.viaje-badge {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  p {
+    min-width: 100px;
+    background: #878787;
+    color: white;
+    margin: 0;
+    padding: 10px 16px;
+    border-radius: 0 0 12px 12px;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+    max-width: 200px;
+  }
+}
+
+.scrollable-content {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 0 10px 10px 10px;
+  background: #ffffff;
+}
+
+.footer-section {
+  height: 45px;
+  min-height: 45px;
+  max-height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  z-index: 10;
+  position: relative;
+}
+
+.section-divider {
+  border: none;
+  height: 2px;
+  background: #878787;
+  margin: 0 15px 20px 15px;
+  border-radius: 1px;
+}
+
+
+.scrollable-content {
+  padding: 20px 15px;
+}
+
+.media-section {
+  margin-bottom: 40px;
+  
+  .section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    
+    .section-title {
+      font-family: var(--font-condensed);
+      font-weight: 700;
+      font-size: 18px;
+      color: #666;
+      margin: 0;
+      text-transform: uppercase;
+    }
+    
+    .upload-button {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: #666;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      
+      span {
+        font-family: var(--font-primary);
+        font-weight: 500;
+      }
+      
+      ion-icon {
+        font-size: 18px;
+      }
+      
+      &:hover {
+        color: #333;
+      }
+    }
+  }
+  
+  .section-divider {
+    border: none;
+    height: 1px;
+    background-color: #e0e0e0;
+    margin-bottom: 20px;
+  }
+}
+
+.media-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 15px;
+  
+  .media-item {
+    aspect-ratio: 1;
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    &.add-item {
+      background-color: #f8f9fa;
+      border: 2px dashed #d1d5db;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      
+      .add-icon {
+        font-size: 40px;
+        color: #9ca3af;
+      }
+      
+    }
+    
+    &.video-item {
+      .play-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0,0,0,0.3);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+        .play-icon {
+          font-size: 48px;
+          color: white;
+          opacity: 0.9;
+        }
+      }
+    }
+  }
+}
+
+// Responsive
+@media (max-width: 768px) {
+  .media-grid {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 12px;
+  }
+  
+  .media-section {
+    .section-header {
+      .section-title {
+        font-size: 16px;
+      }
+      
+      .upload-button {
+        font-size: 12px;
+        
+        ion-icon {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .scrollable-content {
+    padding: 15px 10px;
+  }
+  
+  .media-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    
+    .media-item {
+      &.add-item .add-icon {
+        font-size: 32px;
+      }
+      
+      &.video-item .play-overlay .play-icon {
+        font-size: 36px;
+      }
+    }
+  }
+}

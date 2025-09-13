@@ -63,10 +63,10 @@ export class DashboardPage implements OnInit {
       description: 'HOME.MEDIA',
       component: PhotosPage,
     },
-    {
+/*     {
       img: '../../../assets/dashboard/cards/icono-trivia.png',
       description: 'HOME.TRIVIA',
-    },
+    }, */
   ];
 
   currentPage = 0;

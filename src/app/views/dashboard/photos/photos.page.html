@@ -1,13 +1,97 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>photos</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">photos</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <div class="menu-header">
+    <div class="icon-circle" (click)="modalDismiss()">
+      <ion-icon name="home" style="color: white"></ion-icon>
+    </div>
+  </div>
+  <div class="app-menu-layout">
+    <div class="header-section"></div>
+    <div class="content-section">
+      <div class="viaje-badge">
+        <p>{{'HOME.MEDIA' | translate}}</p>
+      </div>
+      <div class="info-container">
+        <img
+          src="../../../../assets/dashboard/icons/foto.png"
+          style="width: 70px; margin-left: 10px"
+        />
+      </div>
+      <div class="scrollable-content">
+        <!-- Sección de FOTOS -->
+        <div class="media-section">
+          <div class="section-header">
+            <h3 class="section-title">FOTOS</h3>
+            <div class="upload-button">
+              <span>SUBIR FOTO</span>
+              <ion-icon name="cloud-upload-outline"></ion-icon>
+            </div>
+          </div>
+          <hr class="section-divider" />
+
+          <!-- Grid de fotos -->
+          <div class="media-grid">
+            <div class="media-item">
+              <img src="../../../../assets/photos/photo1.jpg" alt="Foto 1" />
+            </div>
+            <div class="media-item">
+              <img src="../../../../assets/photos/photo2.jpg" alt="Foto 2" />
+            </div>
+            <div class="media-item">
+              <img src="../../../../assets/photos/photo3.jpg" alt="Foto 3" />
+            </div>
+            <div class="media-item add-item">
+              <ion-icon name="add" class="add-icon"></ion-icon>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sección de VIDEOS -->
+        <div class="media-section">
+          <div class="section-header">
+            <h3 class="section-title">VIDEOS</h3>
+            <div class="upload-button">
+              <span>SUBIR VIDEO</span>
+              <ion-icon name="cloud-upload-outline"></ion-icon>
+            </div>
+          </div>
+          <hr class="section-divider" />
+
+          <!-- Grid de videos -->
+          <div class="media-grid">
+            <div class="media-item video-item">
+              <img
+                src="../../../../assets/videos/video1-thumb.jpg"
+                alt="Video 1"
+              />
+              <div class="play-overlay">
+                <ion-icon name="play-circle" class="play-icon"></ion-icon>
+              </div>
+            </div>
+            <div class="media-item video-item">
+              <img
+                src="../../../../assets/videos/video2-thumb.jpg"
+                alt="Video 2"
+              />
+              <div class="play-overlay">
+                <ion-icon name="play-circle" class="play-icon"></ion-icon>
+              </div>
+            </div>
+            <div class="media-item video-item">
+              <img
+                src="../../../../assets/videos/video3-thumb.jpg"
+                alt="Video 3"
+              />
+              <div class="play-overlay">
+                <ion-icon name="play-circle" class="play-icon"></ion-icon>
+              </div>
+            </div>
+            <div class="media-item add-item">
+              <ion-icon name="add" class="add-icon"></ion-icon>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-section"></div>
+  </div>
 </ion-content>

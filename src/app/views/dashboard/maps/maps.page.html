@@ -4,12 +4,11 @@
       <ion-icon name="home" style="color: white"></ion-icon>
     </div>
   </div>
-
   <div class="app-menu-layout">
     <div class="header-section"></div>
     <div class="content-section">
       <div class="viaje-badge">
-        <p>{{'HOME.CONNECTIVITY' | translate}}</p>
+        <p>{{'HOME.MAP' | translate}}</p>
       </div>
       <div class="info-container">
         <img
@@ -18,6 +17,23 @@
         />
       </div>
       <div class="scrollable-content">
+        <div *ngIf="isLoading" class="map-skeleton">
+          <div class="skeleton-map-container">
+            <div class="skeleton-map-placeholder">
+              <div class="skeleton-loading-animation">
+                <ion-icon
+                  name="location-outline"
+                  class="skeleton-map-icon"
+                ></ion-icon>
+                <div class="skeleton-loading-dots">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
         <div *ngIf="!isLoading" class="map-container">
           <iframe
             [src]="mapUrl"
@@ -31,9 +47,7 @@
           </iframe>
         </div>
       </div>
-        <div class="footer-section"></div>
     </div>
+    <div class="footer-section"></div>
   </div>
-
-  <!-- Mapa embebido -->
 </ion-content>

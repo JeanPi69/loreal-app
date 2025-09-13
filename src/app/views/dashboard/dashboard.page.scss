@@ -17,6 +17,7 @@
   grid-template-columns: repeat(3, 1fr);
   margin: 0 auto;
   overflow-x: hidden;
+  min-height: 520px;
 }
 
 .dashboard-card {
@@ -26,7 +27,6 @@
   align-items: center;
   text-align: center;
   margin: 5px 0;
-  min-height: 520px;
 }
 
 .dashboard-card img {
