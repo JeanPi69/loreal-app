@@ -30,8 +30,8 @@
             {{'AUTH.LOGIN.LOGIN' | translate}}
           </ion-button>
           <div class="flags-container">
-            <img src="./assets/login/img/i_spain.png" alt="BANDERA ESPAÑA" />
-            <img src="./assets/login/img/i_usa.png" alt="BANDERA USA" />
+            <img src="./assets/login/img/i_spain.png" alt="BANDERA ESPAÑA" (click)="setLang('es')" />
+            <img src="./assets/login/img/i_usa.png" alt="BANDERA USA" (click)="setLang('en')"/>
           </div>
         </form>
       </div>

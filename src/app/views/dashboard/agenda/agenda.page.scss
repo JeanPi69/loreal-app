@@ -1,53 +1,147 @@
-ion-content {
-  --background: white;
-  background: white;
+ion-content{
+  font-family: "Arial", sans-serif;
 }
 
-ion-segment-button {
-  --color: black;
-}
-
-.agenda-row {
+.menu-header{
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  padding-top: 15px;
+  padding-right: 10px;
+  justify-content: flex-end;
+}
+
+.app-menu-layout {
+  display: flex;
+  flex-direction: column;
   width: 100%;
+  overflow: hidden;
+}
+
+ion-icon {
+  font-size: 24px;
+}
+
+.icon-circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid white;
+  background: transparent;
+}
+.header-section {
+  height: 170px;
+  min-height: 170px;
+  max-height: 170px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  z-index: 10;
+  position: relative;
+}
+
+
+
+.content-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  overflow: hidden;
+  position: relative;
+  border-radius: 50px;
+  padding: 0;
+}
+
+.viaje-badge {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  p {
+    min-width: 100px;
+    background: #878787;
+    color: white;
+    margin: 0;
+    padding: 0px 16px;
+    border-radius: 0 0 12px 12px;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+    min-width: 100px;
+    max-width: 100px;
+  }
+}
+
+.scrollable-content {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 0 10px 10px 10px;
+  background: #ffffff;
+
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 3px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 3px;
+
+    &:hover {
+      background: #a8a8a8;
+    }
+  }
+
 }
 
 .day{
-    font-weight: 600;
-    color: black;
+  font-weight: bold;;
 }
 
-.time {
-  margin: 0;
-  font-weight: 500;
-  color: black;
-  background-color: #48c4ff;
-  padding: 8px 13px;
-  font-weight: 600;
+.time{
+  background:#878787;
+  color: white;
+  padding: 5px;
+  border-radius: 8px;
 }
 
-.info-div{
-    border: 1px solid black;
-    padding: 10px;
+.footer-section {
+  height: 45px;
+  min-height: 45px;
+  max-height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  z-index: 10;
+  position: relative;
 }
 
-/* Skeleton */
-
-.skeleton-item {
-  background: linear-gradient(90deg, #e1e1e1 25%, #f5f5f5 50%, #e1e1e1 75%);
-  background-size: 200% 100%;
-  animation: shimmer 1.5s infinite;
-  border-radius: 4px;
-  display: block;
+.agenda-container{
+  border-radius: 50px 50px 0 0;
+  border: 2px solid #878787;
+  height: calc(100% - 80px);
 }
 
-.skeleton-section-title {
-  width: 40%;
-  height: 24px;
-  margin: 16px;
-  margin-bottom: 12px;
+.agenda-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.info-div {
+  border: 1px solid #878787;
+  padding: 10px;
+  border-radius: 12px;
 }
 
 .agenda-row {
@@ -58,28 +152,23 @@ ion-segment-button {
   margin-bottom: 8px;
 }
 
-.skeleton-date {
-  width: 120px;
-  height: 18px;
-}
-
-.skeleton-time {
+// WhatsApp flotante
+.whatsapp-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
   width: 50px;
-  height: 16px;
-}
+  height: 50px;
+  border-radius: 50%;
+  background-color: #25d366;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  z-index: 100;
 
-.info-div {
-  margin-top: 8px;
-}
-
-.skeleton-speaker {
-  width: 80%;
-  height: 14px;
-  margin-bottom: 8px;
-}
-
-.skeleton-subject {
-  width: 90%;
-  height: 16px;
-  margin-bottom: 16px;
+  ion-icon {
+    font-size: 30px;
+    color: white;
+  }
 }

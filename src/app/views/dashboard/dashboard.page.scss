@@ -3,25 +3,20 @@
   flex-direction: row;
   align-items: center;
   gap: 8px;
-}
-
-.user-name {
-  font-size: 1.4em;
-  font-weight: bold;
+  min-height: 110px;
 }
 
 .dashboard-content {
   background-color: #fff;
   width: 100%;
   border-radius: 50px;
-  height: 75vh;
   overflow-y: hidden;
   border: 1px solid rgb(94, 93, 93);
-  padding: 20px;
+  padding: 10px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   margin: 0 auto;
-  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .dashboard-card {
@@ -30,8 +25,8 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  justify-content: space-between;
-  margin: 15px auto;
+  margin: 5px 0;
+  max-height: 520px;
 }
 
 .dashboard-card img {
@@ -70,4 +65,33 @@
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+.pagination-controls {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 10px;
+  padding-bottom: 20px;
+  width: 100%;
+}
+
+.nav-button {
+  --background: #f5f5f5;
+  --background-hover: #e0e0e0;
+  --background-activated: #d7d7d7;
+  --color: #333;
+  --border-radius: 50%;
+  --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --padding-start: 8px;
+  --padding-end: 8px;
+  height: 40px;
+  width: 40px;
+}
+
+.page-indicator {
+  margin: 0 15px;
+  font-size: 14px;
+  color: #666;
 }

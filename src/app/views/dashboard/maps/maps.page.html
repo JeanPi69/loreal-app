@@ -1,54 +1,39 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>{{'HOME.MAP' | translate}}</ion-title>
-    <ion-buttons slot="end">
-      <ion-button fill="clear" (click)="modalDismiss()">
-        <ion-icon slot="icon-only" name="close" color="white"></ion-icon>
-      </ion-button>
-    </ion-buttons>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
-  <!-- Skeleton Loader -->
-  <div *ngIf="isLoading" class="map-skeleton">
-    <div class="skeleton-item skeleton-map"></div>
+  <div class="menu-header">
+    <div class="icon-circle" (click)="modalDismiss()">
+      <ion-icon name="home" style="color: white"></ion-icon>
+    </div>
+  </div>
+
+  <div class="app-menu-layout">
+    <div class="header-section"></div>
+    <div class="content-section">
+      <div class="viaje-badge">
+        <p>{{'HOME.CONNECTIVITY' | translate}}</p>
+      </div>
+      <div class="info-container">
+        <img
+          src="../../../../assets/dashboard/icons/wifi.png"
+          style="width: 70px; margin-left: 10px"
+        />
+      </div>
+      <div class="scrollable-content">
+        <div *ngIf="!isLoading" class="map-container">
+          <iframe
+            [src]="mapUrl"
+            class="google-map"
+            frameborder="0"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          >
+          </iframe>
+        </div>
+      </div>
+        <div class="footer-section"></div>
+    </div>
   </div>
 
   <!-- Mapa embebido -->
-  <div *ngIf="!isLoading" class="map-container">
-    <iframe
-      [src]="mapUrl"
-      class="google-map"
-      frameborder="0"
-      style="border: 0"
-      allowfullscreen=""
-      loading="lazy"
-      referrerpolicy="no-referrer-when-downgrade"
-    >
-    </iframe>
-  </div>
-
-  <!-- Botones de acción -->
-  <div class="map-actions" *ngIf="!isLoading">
-    <ion-button
-      expand="block"
-      fill="solid"
-      (click)="openInMapsApp()"
-      class="action-button"
-    >
-      <ion-icon name="navigate-outline" slot="start"></ion-icon>
-      Abrir en Maps
-    </ion-button>
-
-    <ion-button
-      expand="block"
-      fill="outline"
-      (click)="shareLocation()"
-      class="action-button"
-    >
-      <ion-icon name="share-outline" slot="start"></ion-icon>
-      Compartir ubicación
-    </ion-button>
-  </div>
 </ion-content>

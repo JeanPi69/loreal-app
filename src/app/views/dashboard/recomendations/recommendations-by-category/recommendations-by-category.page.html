@@ -1,85 +1,64 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>{{category.category}}</ion-title>
-    <ion-buttons slot="end">
-      <ion-button fill="clear" (click)="modalDismiss()">
-        <ion-icon slot="icon-only" name="close" color="white"></ion-icon>
-      </ion-button>
-    </ion-buttons>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
-  <!-- Skeleton Loader -->
-  <ion-list *ngIf="isLoading">
-    <ion-item
-      lines="none"
-      *ngFor="let item of [1,2,3,4,5]"
-      class="recommendation-item"
-    >
-      <ion-label>
-        <!-- Skeleton para nombre con icono -->
-        <div class="name-row">
-          <div class="skeleton-item skeleton-icon"></div>
-          <div class="skeleton-item skeleton-name"></div>
-        </div>
+  <div class="menu-header">
+    <div class="icon-circle" (click)="modalDismiss()">
+      <ion-icon name="home" style="color: white"></ion-icon>
+    </div>
+  </div>
+  <div class="app-menu-layout">
+    <div class="header-section"></div>
+    <div class="content-section">
+      <div class="viaje-badge">
+        <p>{{'HOME.CONNECTIVITY' | translate}}</p>
+      </div>
+      <div class="info-container">
+        <img
+          src="../../../../assets/dashboard/icons/wifi.png"
+          style="width: 70px; margin-left: 10px"
+        />
+      </div>
+      <div class="scrollable-content">
+        <ion-list *ngIf="!isLoading">
+          <ion-item
+            lines="none"
+            *ngFor="let recommendation of recommendations"
+            class="recommendation-item"
+          >
+            <ion-label>
+              <div class="name-row">
+                <ion-icon name="star" color="black"></ion-icon>
+                <h2>{{recommendation.name}}</h2>
+              </div>
 
-        <!-- Skeleton para detalles -->
-        <div class="details-column">
-          <div class="detail-item">
-            <div class="skeleton-item skeleton-detail-icon"></div>
-            <div class="skeleton-item skeleton-web"></div>
-          </div>
+              <div class="details-column">
+                <div class="detail-item" *ngIf="recommendation.web">
+                  <ion-icon name="globe-outline"></ion-icon>
+                  <span class="link-text" (click)="openUrl(recommendation.web)"
+                    >{{recommendation.web}}</span
+                  >
+                </div>
 
-          <div class="detail-item">
-            <div class="skeleton-item skeleton-detail-icon"></div>
-            <div class="skeleton-item skeleton-address"></div>
-          </div>
+                <div class="detail-item" *ngIf="recommendation.address">
+                  <ion-icon name="location-outline"></ion-icon>
+                  <span
+                    class="link-text"
+                    (click)="openMaps(recommendation.address)"
+                    >{{recommendation.address}}</span
+                  >
+                </div>
 
-          <div class="detail-item">
-            <div class="skeleton-item skeleton-detail-icon"></div>
-            <div class="skeleton-item skeleton-phone"></div>
-          </div>
-        </div>
-      </ion-label>
-    </ion-item>
-  </ion-list>
-
-  <ion-list *ngIf="!isLoading">
-    <ion-item
-      lines="none"
-      *ngFor="let recommendation of recommendations"
-      class="recommendation-item"
-    >
-      <ion-label>
-        <div class="name-row">
-          <ion-icon name="star" color="black"></ion-icon>
-          <h2>{{recommendation.name}}</h2>
-        </div>
-
-        <div class="details-column">
-          <div class="detail-item" *ngIf="recommendation.web">
-            <ion-icon name="globe-outline"></ion-icon>
-            <span class="link-text" (click)="openUrl(recommendation.web)"
-              >{{recommendation.web}}</span
-            >
-          </div>
-
-          <div class="detail-item" *ngIf="recommendation.address">
-            <ion-icon name="location-outline"></ion-icon>
-            <span class="link-text" (click)="openMaps(recommendation.address)"
-              >{{recommendation.address}}</span
-            >
-          </div>
-
-          <div class="detail-item" *ngIf="recommendation.phone">
-            <ion-icon name="call-outline"></ion-icon>
-            <span class="link-text" (click)="makeCall(recommendation.phone)"
-              >{{recommendation.phone}}</span
-            >
-          </div>
-        </div>
-      </ion-label>
-    </ion-item>
-  </ion-list>
+                <div class="detail-item" *ngIf="recommendation.phone">
+                  <ion-icon name="call-outline"></ion-icon>
+                  <span
+                    class="link-text"
+                    (click)="makeCall(recommendation.phone)"
+                    >{{recommendation.phone}}</span
+                  >
+                </div>
+              </div>
+            </ion-label>
+          </ion-item>
+        </ion-list>
+      </div>
+    </div>
+  </div>
 </ion-content>

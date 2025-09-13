@@ -75,51 +75,6 @@ export class LoginPage implements OnInit {
     }
   }
 
-  /* async login(){
-    this.loginForm.markAllAsTouched();
-    if(this.loginForm.invalid){
-      return;
-    }
-    const loading = await this.loadingCtrl.create({
-      message: this.translate.instant('AUTH.LOGIN.LOGIN_LOADING'),
-    });
-    await loading.present();
-    this.authService.login(this.loginForm.value.email, this.loginForm.value.password).subscribe({
-      next: async res=>{
-        if(!res.success){
-          await loading.dismiss();
-          return;
-        }
-        localStorage.setItem('token', res.data.token);
-        localStorage.setItem('user', JSON.stringify(res.data.user));
-        await loading.dismiss();
-        this.loginForm.reset();
-        this.loginForm.markAsPristine();
-        this.router.navigate(['/menu-layout/dashboard']);
-      },
-      error: async err => {
-        await loading.dismiss();
-        if (err.status === 401 || err.status === 403) {
-          const alert = await this.alertCtrl.create({
-            header: 'Login Failed',
-            message: err.errors ? err.errors : this.translate.instant('ERRORS.LOGIN_FAILED'),
-            buttons: ['OK']
-          });
-          await alert.present();
-          this.loginForm.reset();
-        } else {
-          const alert = await this.alertCtrl.create({
-            header: 'Error',
-            message: err.errors ? err.errors : this.translate.instant('ERRORS.UNEXPECTED_ERROR'),
-            buttons: ['OK']
-          });
-          await alert.present();
-          this.loginForm.reset();
-        }
-      }
-    }); 
-  } */
-
   async login() {
     if (!this.email || !this.password) {
       this.presentToast('Por favor ingresa tu correo y contraseña');
@@ -165,6 +120,11 @@ export class LoginPage implements OnInit {
         }
       }
     });
+  }
+
+  setLang(lang: string){
+    this.translate.use(lang);
+    localStorage.setItem('lang', lang);  
   }
 
   async presentToast(message: string) {

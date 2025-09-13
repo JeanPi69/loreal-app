@@ -1,21 +1,43 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>{{speaker.name}}</ion-title>
-    <ion-buttons slot="end">
-      <ion-button fill="clear" (click)="modalDismiss()">
-        <ion-icon slot="icon-only" name="close" color="white"></ion-icon>
-      </ion-button>
-    </ion-buttons>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
-  <div style="text-align: center; padding: 20px">
-    <img
-      [src]="speaker.image"
-      [alt]="speaker.name"
-      style="max-width: 100%; height: auto"
-    />
+  <div class="menu-header">
+    <div class="icon-circle" (click)="modalDismiss()">
+      <ion-icon name="home" style="color: white"></ion-icon>
+    </div>
   </div>
-  <p class="ion-padding description-text">{{speaker.description}}</p>
+  <div class="app-menu-layout">
+    <div class="header-section"></div>
+    <div class="content-section">
+      <div class="viaje-badge">
+        <p>{{'HOME.EXHIBITORS' | translate}}</p>
+      </div>
+      <div class="info-container">
+        <img
+          src="../../../../assets/dashboard/icons/expositores.png"
+          style="width: 70px; margin-left: 10px"
+        />
+      </div>
+      <div class="scrollable-content">
+        <div style="display: flex; padding: 20px">
+          <img
+            [src]="speaker.image"
+            [alt]="speaker.name"
+            style="max-width: 100%; height: auto"
+          />
+          <div style="display: flex; align-items: center; justify-content: center;">
+            <p>{{speaker.name}}</p>
+          </div>
+        </div>
+        <p class="ion-padding description-text">{{speaker.description}}</p>
+        
+        <!-- Icono de PDF centrado al final -->
+        <div *ngIf="speaker.document" class="pdf-icon-container">
+          <div class="pdf-icon">
+            <ion-icon name="document-text-outline"></ion-icon>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+    <div class="footer-section"></div>
+  </div>
 </ion-content>

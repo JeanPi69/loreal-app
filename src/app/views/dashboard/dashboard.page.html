@@ -1,12 +1,66 @@
-<ion-content [fullscreen]="true">
-  <div class="user-header ion-padding-horizontal">
-    <ion-icon name="person" lazy="true" size="large"></ion-icon>
-    <p class="user-name">{{ user.name }}</p>
+<!-- <ion-content [fullscreen]="true">
+  <div class="app-menu-layout">
+    <div class="header-section"></div>
+    <div class="content-section">
+      <div class="scrollable-content">
+        <div class="dashboard-content">
+          <div
+            *ngFor="let card of cards | slice:(currentPage*6):((currentPage*6)+6)"
+            class="dashboard-card"
+            (click)="openCardModal(card?.component)"
+          >
+            <img [src]="card.img" />
+            <p>{{ card.description | translate }}</p>
+          </div>
+          <div class="pagination-controls">
+            <ion-button
+              [disabled]="currentPage === 0"
+              (click)="prevPage()"
+              class="nav-button"
+            >
+              <ion-icon name="chevron-back-outline"></ion-icon>
+            </ion-button>
+            <ion-button
+              [disabled]="currentPage >= totalPages - 1"
+              (click)="nextPage()"
+              class="nav-button"
+            >
+              <ion-icon name="chevron-forward-outline"></ion-icon>
+            </ion-button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-section"></div>
   </div>
+</ion-content> -->
+
+<ion-content [fullscreen]="true">
+  <div class="user-header ion-padding-horizontal"></div>
   <div class="dashboard-content">
-    <div *ngFor="let card of cards | slice:0:(showAllCards ? cards.length: 6)" class="dashboard-card" (click)="openCardModal(card?.component)">
+    <div
+      *ngFor="let card of cards | slice:(currentPage*6):((currentPage*6)+6)"
+      class="dashboard-card"
+      (click)="openCardModal(card?.component)"
+    >
       <img [src]="card.img" />
       <p>{{ card.description | translate }}</p>
+    </div>
+    <div class="pagination-controls">
+      <ion-button
+        [disabled]="currentPage === 0"
+        (click)="prevPage()"
+        class="nav-button"
+      >
+        <ion-icon name="chevron-back-outline"></ion-icon>
+      </ion-button>
+      <ion-button
+        [disabled]="currentPage >= totalPages - 1"
+        (click)="nextPage()"
+        class="nav-button"
+      >
+        <ion-icon name="chevron-forward-outline"></ion-icon>
+      </ion-button>
     </div>
   </div>
 </ion-content>

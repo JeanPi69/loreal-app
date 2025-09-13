@@ -13,7 +13,9 @@ export class SpeakerDetailPage implements OnInit {
 
   constructor(private modalCtrl: ModalController) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    console.log('speaker', this.speaker);
+  }
 
   modalDismiss() {
     this.modalCtrl.dismiss();

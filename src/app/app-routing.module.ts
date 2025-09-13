@@ -12,11 +12,6 @@ const routes: Routes = [
     loadChildren: () =>
       import('./views/login/login.module').then((m) => m.LoginPageModule),
   },
-/*   {
-    path: 'home',
-    loadChildren: () =>
-      import('./views/home/home.module').then((m) => m.HomePageModule),
-  }, */
   {
     path: 'menu-layout',
     loadChildren: () =>

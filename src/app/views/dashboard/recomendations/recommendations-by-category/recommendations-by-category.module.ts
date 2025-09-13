@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { RecommendationsByCategoryPageRoutingModule } from './recommendations-by-category-routing.module';
 
 import { RecommendationsByCategoryPage } from './recommendations-by-category.page';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    RecommendationsByCategoryPageRoutingModule
+    RecommendationsByCategoryPageRoutingModule,
+    TranslateModule
   ],
   declarations: [RecommendationsByCategoryPage]
 })

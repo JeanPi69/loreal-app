@@ -10,7 +10,7 @@ import { RegisterService } from 'src/app/services/register/register.service';
   standalone: false,
 })
 export class RegisterPage implements OnInit {
-  registerForm: FormGroup;
+  updateForm: FormGroup;
   countries: Country[] = [];
 
   documentTypes = [
@@ -31,19 +31,16 @@ export class RegisterPage implements OnInit {
     private fb: FormBuilder,
     private registerService: RegisterService
   ) {
-    this.registerForm = this.fb.group({
-      firstName: ['', [Validators.required, Validators.minLength(2)]],
-      lastName: ['', [Validators.required, Validators.minLength(2)]],
-      email: ['', [Validators.required, Validators.email]],
-      city: ['', [Validators.required]],
+    this.updateForm = this.fb.group({
+      name: ['', [Validators.required, Validators.minLength(2)]],
+      last_name: ['', [Validators.required, Validators.minLength(2)]],
       phone: ['', [Validators.required, Validators.pattern(/^[0-9]{9,15}$/)]],
-      document: ['', [Validators.required]],
-      documentType: ['', [Validators.required]],
       country: ['', [Validators.required]],
-      code: [null, [Validators.required]],
-      dietaryPreference: ['', [Validators.required]],
+      city: ['', [Validators.required]],
+      document_type: ['', [Validators.required]],
+      document_number: ['', [Validators.required]],
       password: ['', [Validators.required, Validators.minLength(8)]],
-      receiveNotifications: [false],
+      accepts_publicity: [false],
     });
   }
 
@@ -58,11 +55,11 @@ export class RegisterPage implements OnInit {
   }
 
   onSubmit() {
-    this.registerForm.markAllAsTouched();
-    if (this.registerForm.valid) {
-      console.log('Form data:', this.registerForm.value);
+    this.updateForm.markAllAsTouched();
+    if (this.updateForm.valid) {
+      console.log('Form data:', this.updateForm.value);
     } else {
-      console.log('Form data:', this.registerForm.value);
+      console.log('Form data:', this.updateForm.value);
     }
   }
 }

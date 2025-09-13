@@ -1,6 +1,115 @@
 ion-content {
-  --background: white;
-  background: white;
+  font-family: "Arial", sans-serif;
+}
+
+.app-menu-layout {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  overflow: hidden;
+}
+
+.menu-header {
+  display: flex;
+  padding-top: 15px;
+  padding-right: 10px;
+  justify-content: flex-end;
+}
+
+ion-icon {
+  font-size: 24px;
+}
+
+.icon-circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid white;
+  background: transparent;
+}
+
+.header-section {
+  height: 170px;
+  min-height: 170px;
+  max-height: 170px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  z-index: 10;
+  position: relative;
+}
+
+.content-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  overflow: hidden;
+  position: relative;
+  border-radius: 50px;
+  padding: 0;
+}
+
+.viaje-badge {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  p {
+    min-width: 100px;
+    background: #878787;
+    color: white;
+    margin: 0;
+    padding: 0px 16px;
+    border-radius: 0 0 12px 12px;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+    min-width: 100px;
+    max-width: 100px;
+  }
+}
+
+.scrollable-content {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 0 10px 10px 10px;
+  background: #ffffff;
+
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 3px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 3px;
+
+    &:hover {
+      background: #a8a8a8;
+    }
+  }
+}
+
+.footer-section {
+  height: 45px;
+  min-height: 45px;
+  max-height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  z-index: 10;
+  position: relative;
 }
 
 ion-card {
@@ -10,6 +119,42 @@ ion-card {
   --box-shadow: none;
   --background: none;
   --border: none;
+}
+
+// Estilos para el grid scrolleable
+ion-grid {
+  padding: 10px 0;
+  
+  ion-row {
+    margin: 0;
+  }
+  
+  ion-col {
+    padding: 5px;
+  }
+}
+
+// Asegurar que las cards tengan altura consistente
+ion-card {
+  height: auto;
+  min-height: 200px;
+  margin: 0;
+  padding: 10px;
+  border-radius: 12px;
+  background: white;
+  transition: transform 0.2s ease;
+  
+  img {
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 10px auto;
+    display: block;
+  }
+  
+  p {
+    margin: 5px 0;
+    color: #333;
+  }
 }
 
 ion-skeleton-text {

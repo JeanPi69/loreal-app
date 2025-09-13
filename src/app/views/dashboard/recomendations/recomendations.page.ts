@@ -15,10 +15,8 @@ export class RecomendationsPage implements OnInit {
   isLoading = true;
 
   categoryImages: { [key: string]: string } = {
-    '1': 'assets/dashboard/recommendations/agencia-viajes.png',
-    '2': 'assets/dashboard/recommendations/casa-cambio.png',
-    '3': 'assets/dashboard/recommendations/restaurantes.png',
-    '4': 'assets/dashboard/recommendations/taxis.png',
+    '1': 'assets/dashboard/recommendations/restaurantes.png',
+    '2': 'assets/dashboard/recommendations/casa-cambio.png'
   };
 
   constructor(

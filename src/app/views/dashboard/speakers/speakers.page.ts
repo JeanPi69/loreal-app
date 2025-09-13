@@ -42,9 +42,7 @@ export class SpeakersPage implements OnInit {
       component: SpeakerDetailPage,
       componentProps: {
         speaker: speaker,
-      },
-      breakpoints: [0, 1],
-      initialBreakpoint: 1,
+      }
     });
     await modal.present();
   }

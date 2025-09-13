@@ -47,4 +47,8 @@ export class DashboardService {
     return this.http.get<StudiesResponse>(`${this.url}/studies`);
   }
 
+  getTripData(user_id: any): Observable<any>{
+    return this.http.get<any>(`${this.url}/trips/${user_id}?language=es`);
+  }
+
 }

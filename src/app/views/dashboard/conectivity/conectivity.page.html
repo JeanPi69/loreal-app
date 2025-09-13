@@ -1,39 +1,49 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>{{ 'HOME.CONNECTIVITY' | translate }}</ion-title>
-    <ion-buttons slot="end">
-      <ion-button fill="clear" (click)="modalDismiss()">
-        <ion-icon slot="icon-only" name="close" color="white"></ion-icon>
-      </ion-button>
-    </ion-buttons>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
-  <!-- Skeleton Loader -->
-  <ion-list *ngIf="isLoading">
-    <ion-item *ngFor="let item of [1,2,3]" lines="none">
-      <ion-label>
-        <div style="display: flex; margin-bottom: 8px; align-items: center">
-          <div class="skeleton-item" style="width: 80px; height: 16px"></div>
-          <div
-            class="skeleton-item"
-            style="width: 120px; height: 16px; margin-left: 8px"
-          ></div>
-        </div>
-        <div style="display: flex; align-items: center">
-          <div class="skeleton-item" style="width: 90px; height: 16px"></div>
-          <div
-            class="skeleton-item"
-            style="width: 100px; height: 16px; margin-left: 8px"
-          ></div>
-        </div>
-      </ion-label>
-    </ion-item>
-  </ion-list>
+  <div class="menu-header">
+    <div class="icon-circle" (click)="modalDismiss()">
+      <ion-icon name="home" style="color: white"></ion-icon>
+    </div>
+  </div>
+  <div class="app-menu-layout">
+    <div class="header-section"></div>
+    <div class="content-section">
+      <div class="viaje-badge">
+        <p>{{'HOME.CONNECTIVITY' | translate}}</p>
+      </div>
+      <div class="info-container">
+        <img
+          src="../../../../assets/dashboard/icons/wifi.png"
+          style="width: 70px; margin-left: 10px"
+        />
+      </div>
+      <div class="scrollable-content">
+        <ion-list *ngIf="!isLoading">
+          <ion-item *ngFor="let connectivity of connectivities">
+            <ion-label>
+              <div style="display: flex; margin-bottom: 8px">
+                <span
+                  >{{ 'CONNECTIVITY.NETWORK' | translate | titlecase}}:</span
+                >
+                <span style="margin-left: 5px">{{ connectivity.ssid }}</span>
+              </div>
+              <div style="display: flex">
+                <span
+                  >{{ 'CONNECTIVITY.PASSWORD' | translate | titlecase}}:</span
+                >
+                <span style="margin-left: 5px"
+                  >{{ connectivity.password }}</span
+                >
+              </div>
+            </ion-label>
+          </ion-item>
+        </ion-list>
+      </div>
+    </div>
+  </div>
+  <div class="footer-section"></div>
 
   <!-- Contenido real -->
-  <ion-list *ngIf="!isLoading">
+  <!-- <ion-list *ngIf="!isLoading">
     <ion-item *ngFor="let connectivity of connectivities">
       <ion-label>
         <div style="display: flex; margin-bottom: 8px">
@@ -46,5 +56,5 @@
         </div>
       </ion-label>
     </ion-item>
-  </ion-list>
+  </ion-list> -->
 </ion-content>

@@ -6,13 +6,11 @@ import { ConectivityPage } from './conectivity/conectivity.page';
 import { Card } from 'src/app/models/Dashboard';
 import { SpeakersPage } from './speakers/speakers.page';
 import { AgendaPage } from './agenda/agenda.page';
-import { TourPage } from './tour/tour.page';
 import { RecomendationsPage } from './recomendations/recomendations.page';
 import { MapsPage } from './maps/maps.page';
 import { CountryPage } from './country/country.page';
 import { PhotosPage } from './photos/photos.page';
-import { SocialPage } from './social/social.page';
-import { ScientificPage } from './scientific/scientific.page';
+import { TravelPage } from './travel/travel.page';
 
 @Component({
   selector: 'app-dashboard',
@@ -26,49 +24,54 @@ export class DashboardPage implements OnInit {
   showAllCards = false;
   cards: Card[] = [
     {
-      img: '../../../assets/dashboard/cards/icono-viaje.png', 
-      description: ''
+      img: '../../../assets/dashboard/cards/icono-viaje.png',
+      description: 'HOME.TRAVEL',
+      component: TravelPage,
     },
     {
       img: '../../../assets/dashboard/cards/icono-agenda.png',
-      description: '',
-      component: AgendaPage
+      description: 'HOME.DIARY',
+      component: AgendaPage,
     },
     {
-      img: '../../../assets/dashboard/cards/expositores.png',
+      img: '../../../assets/dashboard/cards/icono-expositores.png',
       description: 'HOME.EXHIBITORS',
-      component: SpeakersPage
+      component: SpeakersPage,
     },
     {
-      img: '../../../assets/dashboard/cards/peru.png',
-      description: 'HOME.PERU',
-      component: CountryPage
+      img: '../../../assets/dashboard/cards/icono-colombia.png',
+      description: 'HOME.COLOMBIA',
+      component: CountryPage,
     },
     {
-      img: '../../../assets/dashboard/cards/recommendations.png',
+      img: '../../../assets/dashboard/cards/icono-recomendaciones.png',
       description: 'HOME.RECOMMENDATIONS',
-      component: RecomendationsPage
+      component: RecomendationsPage,
     },
     {
-      img: '../../../assets/dashboard/cards/mapa.png',
+      img: '../../../assets/dashboard/cards/icono-mapa.png',
       description: 'HOME.MAP',
-      component: MapsPage
+      component: MapsPage,
     },
     {
-      img: '../../../assets/dashboard/cards/connectivity.png',
+      img: '../../../assets/dashboard/cards/icono-redes-wifi.png',
       description: 'HOME.CONNECTIVITY',
       component: ConectivityPage,
     },
     {
-      img: '../../../assets/dashboard/cards/media.png',
+      img: '../../../assets/dashboard/cards/icono-fotos-y-videos.png',
       description: 'HOME.MEDIA',
-      component: PhotosPage
+      component: PhotosPage,
     },
     {
-      img: '../../../assets/dashboard/cards/trivia.png',
+      img: '../../../assets/dashboard/cards/icono-trivia.png',
       description: 'HOME.TRIVIA',
-    }
+    },
   ];
+
+  currentPage = 0;
+  itemsPerPage = 6;
+  totalPages = 0;
 
   constructor(
     private translate: TranslateService,
@@ -76,6 +79,7 @@ export class DashboardPage implements OnInit {
   ) {}
 
   ngOnInit() {
+    this.totalPages = Math.ceil(this.cards.length / this.itemsPerPage);
     const userString = localStorage.getItem('user');
     if (userString) {
       this.user = JSON.parse(userString);
@@ -83,11 +87,11 @@ export class DashboardPage implements OnInit {
   }
 
   async openCardModal(component?: Type<any>) {
-    if(!component) return;
+    if (!component) return;
     const modal = await this.modalCtrl.create({
       component,
-      breakpoints: [1],
-      initialBreakpoint: 1,
+      /*       breakpoints: [1],
+      initialBreakpoint: 1, */
     });
     await modal.present();
   }
@@ -96,4 +100,15 @@ export class DashboardPage implements OnInit {
     this.showAllCards = !this.showAllCards;
   }
 
+  nextPage() {
+    if (this.currentPage < this.totalPages - 1) {
+      this.currentPage++;
+    }
+  }
+
+  prevPage() {
+    if (this.currentPage > 0) {
+      this.currentPage--;
+    }
+  }
 }

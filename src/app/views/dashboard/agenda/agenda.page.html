@@ -1,60 +1,73 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>{{'AGENDA.TITLE' | translate}}</ion-title>
-    <ion-buttons slot="end">
-      <ion-button fill="clear" (click)="modalDismiss()">
-        <ion-icon slot="icon-only" name="close" color="white"></ion-icon>
-      </ion-button>
-    </ion-buttons>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
-  <ion-segment [(ngModel)]="selectedDate" (ionChange)="onDateChange($event)">
-    <ion-segment-button value="2023-09-22"
-      >{{'AGENDA.FRIDAY' | translate}} 22</ion-segment-button
-    >
-    <ion-segment-button value="2023-09-23"
-      >{{'AGENDA.SATURDAY' | translate}} 23</ion-segment-button
-    >
-  </ion-segment>
-
-    <ion-list *ngIf="isLoading">
-    <div *ngFor="let item of [1,2,3]">
-      <!-- Skeleton para el título de sección -->
-      <div class="skeleton-item skeleton-section-title"></div>
-      
-      <!-- Skeleton para items de agenda -->
-      <ion-item lines="none" *ngFor="let agendaItem of [1,2,3]">
-        <ion-label>
-          <div class="agenda-row">
-            <div class="skeleton-item skeleton-date"></div>
-            <div class="skeleton-item skeleton-time"></div>
-          </div>
-          <div class="info-div">
-            <div class="skeleton-item skeleton-speaker"></div>
-            <div class="skeleton-item skeleton-subject"></div>
-          </div>
-        </ion-label>
-      </ion-item>
+  <div class="menu-header">
+    <div class="icon-circle" (click)="modalDismiss()">
+      <ion-icon name="home" style="color: white"></ion-icon>
     </div>
-  </ion-list>
-
-  <ion-list *ngIf="!isLoading">
-    <div *ngFor="let item of agenda">
-      <h2 *ngIf="item.name" style="font-size: 24px; font-weight: bold; color:black; margin:16px;">{{item.name}}</h2>
-      <ion-item lines="none" *ngFor="let agendaItem of item.agenda">
-        <ion-label>
-          <div class="agenda-row">
-            <h2 class="day">{{ getDateLabel() }}</h2>
-            <p class="time">{{ agendaItem.start_date | date: 'hh:mm' }}</p>
-          </div>
-          <div class="info-div">
-            <p *ngIf="agendaItem.speakers.length>0"><ion-text style="font-weight: 600;color:black;">{{agendaItem.speakers[0].name}}</ion-text> - {{agendaItem.speakers[0].specialty}}</p>
-            <h3 style="color: #48c4ff; font-size: 16px; font-weight: 600; padding:15px 0;">{{ agendaItem.subject}}</h3>
-          </div>
-        </ion-label>
-      </ion-item>
+  </div>
+  <div class="app-menu-layout">
+    <div class="header-section"></div>
+    <div class="viaje-badge" style="padding: 0 10px 0 10px">
+      <p
+        style="background: white; color: #878787; border-radius: 12px 12px 0 0"
+      >
+        VIERNES
+      </p>
     </div>
-  </ion-list>
+    <div class="content-section">
+      <div class="scrollable-content">
+        <div class="viaje-badge">
+          <p>{{'HOME.DIARY' | translate}}</p>
+        </div>
+        <div class="info-container">
+          <img
+            src="../../../../assets/dashboard/icons/agenda.png"
+            style="width: 70px; margin-left: 10px"
+          />
+        </div>
+        <ion-list *ngIf="!isLoading">
+          <div *ngFor="let item of agenda">
+            <h2
+              *ngIf="item.name"
+              style="
+                font-size: 24px;
+                font-weight: bold;
+                color: black;
+                margin: 16px;
+              "
+            >
+              {{item.name}}
+            </h2>
+            <ion-item lines="none" *ngFor="let agendaItem of item.agenda">
+              <ion-label>
+                <div class="agenda-row">
+                  <h2 class="day">{{ getDateLabel() }}</h2>
+                  <p class="time">
+                    {{ agendaItem.start_date | date: 'hh:mm a' }}
+                  </p>
+                </div>
+                <div class="info-div">
+                  <p *ngIf="agendaItem.speakers.length>0">
+                    <ion-text style="font-weight: 600; color: #878787"
+                      >{{agendaItem.speakers[0].name}}</ion-text
+                    >
+                  </p>
+                  <h3
+                    style="
+                      color: black;
+                      font-size: 16px;
+                      font-weight: 600;
+                      padding: 15px 0;
+                    "
+                  >
+                    {{ agendaItem.subject}}
+                  </h3>
+                </div>
+              </ion-label>
+            </ion-item>
+          </div>
+        </ion-list>
+      </div>
+    </div>
+    <div class="footer-section"></div>
+  </div>
 </ion-content>

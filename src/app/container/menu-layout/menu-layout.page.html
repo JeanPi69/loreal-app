@@ -1,52 +1,22 @@
 <div class="app-menu-layout">
-  <div
-    style="
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      padding: 8px;
-    "
-  >
-    <img
-      class="logo-img logo-img_menu"
-      src="/assets/login/texto/logo.png"
-      alt="Logo Loreal"
-    />
+  <div class="menu-header">
     <div
-      style="
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        gap: 12px;
-        padding: 0 8px;
-      "
+      style="display: flex; flex-direction: row; align-items: center; gap: 8px"
     >
-      <p (click)="setLang('en')">EN</p>
-      <p (click)="setLang('es')">ES</p>
-      <ion-icon
-        id="click-trigger"
-        name="menu-outline"
-        lazy="true"
-        size="large"
-      ></ion-icon>
-      <ion-popover trigger="click-trigger">
-        <ng-template>
-          <ion-content class="not-background-content">
-            <ion-list>
-              <ion-item (click)="openChangePasswordModal()">
-                <ion-icon name="lock-closed-outline"></ion-icon>
-                <ion-label
-                  >{{'CHANGE_PASSWORD.CHANGE_PASSWORD' | translate}}</ion-label
-                >
-              </ion-item>
-              <ion-item (click)="logout()">
-                <ion-icon name="log-out-outline" lazy="true"></ion-icon>
-                <ion-label>{{'AUTH.LOGOUT.LOGOUT' | translate}}</ion-label>
-              </ion-item>
-            </ion-list>
-          </ion-content>
-        </ng-template>
-      </ion-popover>
+      <img
+        [src]="user.image"
+        alt="USER PHOTO"
+        style="
+          height: 36px;
+          width: 40px;
+          border-radius: 50%;
+          border: 1px solid white;
+        "
+      />
+      <p>{{user.name}}</p>
+    </div>
+    <div class="icon-circle">
+      <ion-icon name="home" style="color: white"></ion-icon>
     </div>
   </div>
 

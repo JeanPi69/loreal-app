@@ -50,6 +50,10 @@ const routes: Routes = [
   {
     path: 'scientific',
     loadChildren: () => import('./scientific/scientific.module').then( m => m.ScientificPageModule)
+  },
+  {
+    path: 'travel',
+    loadChildren: () => import('./travel/travel.module').then( m => m.TravelPageModule)
   }
 
 ];

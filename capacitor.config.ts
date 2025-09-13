@@ -24,6 +24,10 @@ const config: CapacitorConfig = {
       layoutName: 'launch_screen',
       useDialog: false,
     },
+    server:{
+      androidScheme: 'https',
+      cleartext: true
+    }
   }
 };
 

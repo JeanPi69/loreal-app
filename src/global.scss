@@ -26,6 +26,181 @@
 @import "@ionic/angular/css/flex-utils.css";
 
 /**
+ * Custom Fonts
+ * -----------------------------------------------------
+ * Import custom fonts from assets/fonts
+ */
+
+// DIN Next LT Pro Family
+@font-face {
+  font-family: "DIN Next LT Pro";
+  src: url("./assets/fonts/DINNextLTPro-Light.otf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "DIN Next LT Pro";
+  src: url("./assets/fonts/DINNextLTPro-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "DIN Next LT Pro";
+  src: url("./assets/fonts/DINNextLTPro-Medium.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "DIN Next LT Pro";
+  src: url("./assets/fonts/DINNextLTPro-Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+// DIN Condensed
+@font-face {
+  font-family: "DIN Condensed";
+  src: url("./assets/fonts/DIN Condensed Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+// ITC Avant Garde Gothic Family
+@font-face {
+  font-family: "ITC Avant Garde Gothic";
+  src: url("./assets/fonts/ITC Avant Garde Gothic CE Book.otf")
+    format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "ITC Avant Garde Gothic";
+  src: url("./assets/fonts/ITC Avant Garde Gothic CE Demi.otf")
+    format("opentype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "ITC Avant Garde Gothic";
+  src: url("./assets/fonts/ITC Avant Garde Gothic Medium.otf")
+    format("opentype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "ITC Avant Garde Gothic Condensed";
+  src: url("./assets/fonts/ITC Avant Garde Gothic Demi Condensed.otf")
+    format("opentype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+// ITC Avant Garde Standard
+@font-face {
+  font-family: "ITC Avant Garde Std";
+  src: url("./assets/fonts/ITCAvantGardeStd-Bk.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "ITC Avant Garde Std";
+  src: url("./assets/fonts/ITCAvantGardeStd-Md.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+// Lumios Marker
+@font-face {
+  font-family: "Lumios Marker";
+  src: url("./assets/fonts/Lumios Marker.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+// Myriad Pro
+@font-face {
+  font-family: "Myriad Pro";
+  src: url("./assets/fonts/MyriadPro-Regular_3.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+// Arial (backup)
+@font-face {
+  font-family: "Arial Custom";
+  src: url("./assets/fonts/arial.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/**
+ * Global Font Variables
+ * -----------------------------------------------------
+ * CSS Custom Properties for easy font usage
+ */
+:root {
+  --font-primary: "DIN Next LT Pro", "Helvetica Neue", Helvetica, Arial,
+    sans-serif;
+  --font-condensed: "DIN Condensed", "Arial Narrow", Arial, sans-serif;
+  --font-avant-garde: "ITC Avant Garde Gothic", "Century Gothic", Arial,
+    sans-serif;
+  --font-avant-garde-std: "ITC Avant Garde Std", "Century Gothic", Arial,
+    sans-serif;
+  --font-marker: "Lumios Marker", "Comic Sans MS", cursive;
+  --font-myriad: "Myriad Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+/**
+ * Global Font Classes
+ * -----------------------------------------------------
+ * Utility classes for easy font application
+ */
+.font-din-next {
+  font-family: var(--font-primary);
+}
+
+.font-din-condensed {
+  font-family: var(--font-condensed);
+}
+
+.font-avant-garde {
+  font-family: var(--font-avant-garde);
+}
+
+.font-avant-garde-std {
+  font-family: var(--font-avant-garde-std);
+}
+
+.font-marker {
+  font-family: var(--font-marker);
+}
+
+.font-myriad {
+  font-family: var(--font-myriad);
+}
+
+/**
  * Ionic Dark Mode
  * -----------------------------------------------------
  * For more info, please see:
@@ -38,14 +213,14 @@
 
 // Activar para ver lineas de contorno de los elementos
 /* * {
-  outline: 1px solid rgba(0, 0, 0, 0.2);
+  outline: 1px solid rgba(0, 0, 0, 1);
 } */
 
 /* ion-content{
   --background: url("./assets/login/img/FONDO.png") 0 0/100% 100% no-repeat;
 } */
 
-body, ion-app, ion-content {
+/* body, ion-app, ion-content {
   --background: none;
   background-image: url("./assets/login/img/FONDO.png");
   background-position: center center;
@@ -54,9 +229,9 @@ body, ion-app, ion-content {
   background-attachment: fixed;
   min-height: 100vh;
   height: auto !important;
-}
+} */
 
-ion-content::before {
+/* ion-content::before {
   content: "";
   position: fixed;
   top: 0;
@@ -67,29 +242,52 @@ ion-content::before {
   background-size: cover;
   background-position: center;
   z-index: -1;
+} */
+
+.dashboard-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("./assets/dashboard/FONDO-DASHBOARD.png");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  z-index: -1;
 }
 
-.not-background-content{
+.general-container {
+  background-color: white;
+  border-radius: 32px;
+  border: 2px solid #868686;
+  height: 65%;
+  margin-top: 55%;
+}
+
+.not-background-content {
   --background: transparent !important;
   background: transparent !important;
 }
-ion-list{
+ion-list {
   --background: white !important;
   background: white !important;
 }
-ion-item{
+ion-item {
   --background: white !important;
   background: white !important;
   --color: black !important;
   color: black !important;
 }
 
-P{
+P {
   color: black;
 }
 
-ion-icon{
-  --color:black;
+ion-icon {
+  --color: black;
   color: black;
 }
 
@@ -106,10 +304,24 @@ app-menu-layout ion-router-outlet ion-content {
   background: transparent !important;
 }
 
-.app-menu-layout{
-  background: url("./assets/login/img/background_complete.png") 0 0/100% 100% no-repeat;
+.app-menu-layout {
+  /* background: url("./assets/dashboard/FONDO-DASHBOARD.png") 0 0/100% 100% no-repeat;
   width: 100vw;
   height: 100vh;
+  padding-top: env(safe-area-inset-top, 24px); */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("./assets/dashboard/FONDO-DASHBOARD.png");
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  z-index: -1;
+  padding-top: env(safe-area-inset-top, 24px);
 }
 
 .logo-img {
@@ -117,11 +329,14 @@ app-menu-layout ion-router-outlet ion-content {
   justify-content: flex-end;
   margin-left: auto;
   width: 35%;
-  &_menu{
-    margin-left:0;
+  &_menu {
+    margin-left: 0;
     justify-content: flex-start;
   }
 }
+
+
+
 
 @keyframes shimmer {
   0% {
@@ -136,7 +351,7 @@ body.keyboard-is-open.ios {
   .content-container {
     overflow-y: auto !important;
   }
-  
+
   ion-content {
     --keyboard-offset: 0px !important;
   }

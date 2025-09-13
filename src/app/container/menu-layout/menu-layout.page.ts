@@ -12,6 +12,8 @@ import { ChangePasswordPage } from 'src/app/views/dashboard/change-password/chan
   standalone: false,
 })
 export class MenuLayoutPage implements OnInit {
+  user: any;
+
   constructor(
     private translate: TranslateService,
     private authService: AuthService,
@@ -19,9 +21,15 @@ export class MenuLayoutPage implements OnInit {
     private popOverCtrl: PopoverController,
     private loadingCtrl: LoadingController,
     private modalCtrl: ModalController
-  ) {}
+  ) {
 
-  ngOnInit() {}
+  }
+
+  ngOnInit() {
+    if(localStorage.getItem('user')){
+      this.user = JSON.parse(localStorage.getItem('user')!);
+    }
+  }
 
   setLang(lang: string) {
     this.translate.use(lang);
